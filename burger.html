@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hand Coding: Interactive Heart Game | Yinqi Huang</title>
+    <title>Burger Coding | Yinqi Huang</title>
     <style>
         :root { 
             --bg: #ffffff; --text: #111111; --accent: #6366f1; --gray: #fcfcfd; --border: #f2f2f2; --sub: #999999; 
@@ -39,10 +39,7 @@
         h2 { font-size: 0.8rem; font-weight: 800; margin-bottom: 25px; color: var(--accent); text-transform: uppercase; letter-spacing: 2px; }
         p { font-size: 0.95rem; color: #444; margin-bottom: 20px; text-align: justify; }
 
-        .step-box { background: var(--gray); padding: 20px; border-radius: 4px; border: 1px solid var(--border); margin-bottom: 15px; }
-        .step-num { font-weight: 800; color: var(--accent); font-size: 0.7rem; text-transform: uppercase; margin-bottom: 5px; display: block; }
-
-        /* --- 图片画廊 --- */
+        /* 图片画廊：修正比例显示，不剪裁 */
         .process-gallery { 
             display: grid; 
             grid-template-columns: repeat(2, 1fr); 
@@ -59,11 +56,7 @@
             align-items: center;
             justify-content: center;
         }
-        .process-img { 
-            max-width: 100%; 
-            height: auto; 
-            display: block;
-        }
+        .process-img { max-width: 100%; height: auto; display: block; }
 
         .sidebar-box { background: var(--gray); padding: 30px; border-radius: 12px; border: 1px solid var(--border); position: sticky; top: 100px; }
         .sidebar-box h3 { font-size: 0.65rem; text-transform: uppercase; color: var(--sub); margin-bottom: 10px; letter-spacing: 1.5px; }
@@ -84,14 +77,13 @@
     </nav>
 
     <div class="container">
-        <h1>Interactive Hand Heart Game</h1>
-        <p class="tagline">An interactive experience built with p5.js and ml5.js HandPose exploring physical connection.</p>
+        <h1>Burger Interaction Lab</h1>
+        <p class="tagline">Creative coding experiment focusing on dynamic UI and physics-based interaction.</p>
 
         <div class="hero-media">
             <iframe 
-                src="https://www.youtube.com/embed/lDH4DXnp0fk?rel=0&modestbranding=1" 
-                title="Interactive Hand Heart Game Demo" 
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                src="https://www.youtube.com/embed/YOUR_VIDEO_ID" 
+                title="Burger Interaction Demo" 
                 allowfullscreen>
             </iframe>
         </div>
@@ -99,50 +91,29 @@
         <div class="main-grid">
             <div class="content">
                 <section>
-                    <h2>01. Concept & Reflection</h2>
-                    <p>The main idea of this project was to explore how physical distance can affect our emotions and how we connect with others. At first, I considered <strong>BodyPose</strong> for tracking, but I found that positioning two people for a single camera was difficult, especially when sharing one screen.</p>
-                    <p>I pivoted to <strong>HandPose</strong>, which proved more responsive and easier to use when players are close together in front of one webcam.</p>
+                    <h2>01. Concept</h2>
+                    <p>This project explores playful interaction design through the simulation of a digital "burger" building experience. Using <strong>p5.js</strong>, I focused on how object states and user input can create a satisfying tactile feel in a 2D environment.</p>
                 </section>
 
                 <section>
-                    <h2>02. Interaction Instructions</h2>
-                    <div class="step-box">
-                        <span class="step-num">Step 1: Start</span>
-                        <p style="font-size: 0.85rem; margin:0;">Raise one hand and point your index finger toward a gray heart on the screen to begin.</p>
-                    </div>
-                    <div class="step-box">
-                        <span class="step-num">Step 2: Draw</span>
-                        <p style="font-size: 0.85rem; margin:0;">A heart appears between your thumb and index finger; move your hand to draw.</p>
-                    </div>
-                    <div class="step-box">
-                        <span class="step-num">Step 3: Customize</span>
-                        <p style="font-size: 0.85rem; margin:0;">Pinch your thumb and index finger together to change the heart's color.</p>
-                    </div>
-                    <div class="step-box">
-                        <span class="step-num">Step 4: Connect</span>
-                        <p style="font-size: 0.85rem; margin:0;">Bring your hands closer to the other player. A big red heart will appear when you get close enough.</p>
-                    </div>
+                    <h2>02. Technical Logic</h2>
+                    <p>The project utilizes object-oriented programming to manage different burger ingredients as individual classes. Collision detection and gravity-based physics were implemented to give the ingredients a sense of weight and response when stacked.</p>
                 </section>
 
                 <div class="process-gallery">
-                    <div class="process-img-container"><img src="hand1.png" alt="Interaction 1" class="process-img"></div>
-                    <div class="process-img-container"><img src="hand2.png" alt="Interaction 2" class="process-img"></div>
-                    <div class="process-img-container"><img src="hand3.png" alt="Interaction 3" class="process-img"></div>
-                    <div class="process-img-container"><img src="hand5.png" alt="Interaction 5" class="process-img"></div>
+                    <div class="process-img-container"><img src="burger1.png" alt="Burger Process 1" class="process-img"></div>
+                    <div class="process-img-container"><img src="burger2.png" alt="Burger Process 2" class="process-img"></div>
+                    <div class="process-img-container"><img src="burger3.png" alt="Burger Process 3" class="process-img"></div>
+                    <div class="process-img-container"><img src="burger4.png" alt="Burger Process 4" class="process-img"></div>
                 </div>
-
-                <section>
-                    <h2>03. Future Roadmap</h2>
-                    <p>In the future, I hope to continue working on this project by making it work over a network using <strong>WebSockets</strong>. This would allow people to connect and interact from different locations using their own cameras.</p>
-                </section>
             </div>
 
             <aside class="sidebar">
                 <div class="sidebar-box">
                     <h3>Technologies</h3>
-                    <p>p5.js<br>ml5.js (HandPose)<br>JavaScript</p>
+                    <p>p5.js<br>JavaScript<br>CSS3</p>
                     <h3>Interaction Focus</h3>
-                    <p>Computer Vision<br>Proximity Sensing<br>Collaborative Play</p>
+                    <p>Physics Simulation<br>State Management<br>Game Design</p>
                     <h3>Category</h3>
                     <p>Creative Coding</p>
                 </div>

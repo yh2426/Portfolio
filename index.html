@@ -49,23 +49,17 @@
         }
         header p { font-size: 1rem; color: var(--sub); line-height: 1.6; max-width: 550px; }
 
+        /* --- 调整后的分类标签：颜色加深至 #555 --- */
         .category-label { 
-            display: flex;
-            align-items: center;
-            justify-content: center; 
-            gap: 20px;
-            font-size: 0.6rem; 
-            text-transform: uppercase; 
+            display: flex; align-items: center; justify-content: center; 
+            gap: 20px; font-size: 0.65rem; text-transform: uppercase; 
             letter-spacing: 4px; 
-            color: #ddd; 
-            margin: 100px 0 50px; 
-            font-weight: 800; 
+            color: #555555; 
+            margin: 100px 0 50px; font-weight: 800; 
         }
         .category-label::before, .category-label::after {
-            content: "";
-            flex: 0 1 40px; 
-            height: 1px;
-            background-color: #eee;
+            content: ""; flex: 0 1 60px; height: 1.5px; 
+            background-color: #eeeeee;
         }
 
         .work-grid { 
@@ -95,7 +89,7 @@
             max-width: 900px; margin: 0 auto; padding: 100px 5%; 
             border-top: 1px solid var(--border); display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 60px;
         }
-        h2 { font-weight: 800; margin-bottom: 35px; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 2px; color: #ddd; }
+        h2 { font-weight: 800; margin-bottom: 35px; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 2px; color: #555555; }
         .info-item { margin-bottom: 25px; font-size: 0.85rem; }
         .info-item strong { display: block; font-weight: 800; font-size: 0.95rem; margin-bottom: 2px; }
 
@@ -155,12 +149,16 @@
     <div class="category-label">Creative Coding</div>
     <section class="work-grid">
         <a href="handcoding.html" class="card">
-            <div class="img-wrap">
-                <img src="hand4.png" alt="Hand Heart Game">
-            </div>
+            <div class="img-wrap"><img src="hand4.png" alt="Hand Heart Game"></div>
             <span class="tag">p5.js • ml5.js • HandPose</span>
             <h3>Interactive Hand Heart Game</h3>
-            <p class="project-note">A two-player experience exploring emotional connection through computer vision and proximity-based interaction.</p>
+            <p class="project-note">A two-player experience exploring emotional connection through computer vision.</p>
+        </a>
+        <a href="burger.html" class="card">
+            <div class="img-wrap"><img src="burger1.png" alt="Burger & Fries Generator"></div>
+            <span class="tag">p5.js • OOP • Interaction</span>
+            <h3>Burger & Fries Generator</h3>
+            <p class="project-note">A playful interactive experiment exploring generative food design and OOP logic.</p>
         </a>
     </section>
 
@@ -175,7 +173,7 @@
             <h2>Professional</h2>
             <div class="info-item"><strong>NYU VIP Team</strong><span>XR Developer</span></div>
             <div class="info-item"><strong>Revela, Inc.</strong><span>UX Designer</span></div>
-            <div class="info-item"><strong>Freelance</strong><span>XR Designer</span></div>
+            <div class="info-item"><strong>TJ Auto</strong><span>UX Designer</span></div>
         </div>
     </section>
 
