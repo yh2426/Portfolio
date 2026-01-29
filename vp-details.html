@@ -16,7 +16,6 @@
 
         body { font-family: 'Inter', -apple-system, sans-serif; margin: 0; background: var(--bg); color: var(--text); line-height: 1.6; -webkit-font-smoothing: antialiased; }
         
-        /* 导航微调：与主页一致 */
         nav { 
             padding: 1.2rem 5%; 
             display: flex; justify-content: space-between; align-items: center; 
@@ -31,11 +30,11 @@
         h1 { font-size: 2.2rem; font-weight: 800; letter-spacing: -1.5px; margin-bottom: 10px; }
         .tagline { font-size: 1rem; color: var(--sub); margin-bottom: 50px; }
 
-        /* YouTube 嵌入容器优化 */
+        /* YouTube 嵌入容器 */
         .video-hero {
             width: 100%;
             position: relative;
-            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+            padding-bottom: 56.25%; 
             height: 0;
             border-radius: 4px;
             overflow: hidden;
@@ -84,7 +83,7 @@
 
         <div class="video-hero">
             <iframe 
-                src="https://www.youtube.com/embed/你的视频ID?rel=0&modestbranding=1&autoplay=0" 
+                src="https://www.youtube.com/embed/kocNFBJFg7Y?rel=0&modestbranding=1" 
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                 allowfullscreen>
             </iframe>
@@ -100,11 +99,11 @@
                 <section class="cs-section">
                     <h2>02. Technical Challenge: Bone Characterization</h2>
                     <div class="problem-card">
-                        <span class="card-label" style="color:#ff4d4d;">The Problem</span>
+                        <span class="card-label">The Problem</span>
                         MotionBuilder failed to recognize the bone hierarchies of characters exported from Unreal Engine, effectively breaking the automated retargeting pipeline.
                     </div>
                     <div class="solution-card">
-                        <span class="card-label" style="color:#00c853;">The Solution</span>
+                        <span class="card-label">The Solution</span>
                         I manually reassigned every bone within MotionBuilder’s character definition. Despite software instability and frequent crashes, I successfully mapped the skeleton to custom character rigs.
                     </div>
                 </section>
