@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hand Coding: Interactive Logic | Yinqi Huang</title>
+    <title>Hand Coding: Interactive Heart Game | Yinqi Huang</title>
     <style>
         :root { 
-            --bg: #ffffff; --text: #111111; --accent: #6366f1; --gray: #fcfcfd; --border: #f2f2f2; --sub: #999999; --code-bg: #1e1e1e;
+            --bg: #ffffff; --text: #111111; --accent: #6366f1; --gray: #fcfcfd; --border: #f2f2f2; --sub: #999999; 
         }
 
         body { font-family: 'Inter', -apple-system, sans-serif; margin: 0; background: var(--bg); color: var(--text); line-height: 1.6; -webkit-font-smoothing: antialiased; }
@@ -26,31 +26,54 @@
         h1 { font-size: 2.2rem; font-weight: 800; letter-spacing: -1.5px; margin-bottom: 10px; line-height: 1.1; }
         .tagline { font-size: 1rem; color: var(--sub); margin-bottom: 50px; }
 
+        /* 视频容器 */
         .hero-media { 
-            width: 100%; aspect-ratio: 16/9; border-radius: 4px; overflow: hidden; 
-            margin-bottom: 60px; border: 1px solid var(--border); background: #000; 
+            width: 100%; position: relative; padding-bottom: 56.25%; height: 0;
+            border-radius: 4px; overflow: hidden; margin-bottom: 60px; 
+            border: 1px solid var(--border); background: #000; 
         }
-        .hero-media img, .hero-media video { width: 100%; height: 100%; object-fit: cover; }
+        .hero-media iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
 
         .main-grid { display: grid; grid-template-columns: 2fr 1fr; gap: 60px; }
         section { margin-bottom: 60px; }
         h2 { font-size: 0.8rem; font-weight: 800; margin-bottom: 25px; color: var(--accent); text-transform: uppercase; letter-spacing: 2px; }
         p { font-size: 0.95rem; color: #444; margin-bottom: 20px; text-align: justify; }
 
-        /* 代码展示区样式 */
-        pre { 
-            background: var(--code-bg); color: #d4d4d4; padding: 25px; 
-            border-radius: 4px; font-family: 'Fira Code', monospace; font-size: 0.8rem; 
-            overflow-x: auto; border: 1px solid #333; line-height: 1.5;
+        .step-box { background: var(--gray); padding: 20px; border-radius: 4px; border: 1px solid var(--border); margin-bottom: 15px; }
+        .step-num { font-weight: 800; color: var(--accent); font-size: 0.7rem; text-transform: uppercase; margin-bottom: 5px; display: block; }
+
+        /* --- 图片画廊：修正放大问题 --- */
+        .process-gallery { 
+            display: grid; 
+            grid-template-columns: repeat(2, 1fr); 
+            gap: 20px; 
+            margin: 40px 0 80px 0; 
         }
-        .code-comment { color: #6a9955; }
-        .code-keyword { color: #569cd6; }
+        .process-img-container {
+            width: 100%;
+            border-radius: 4px;
+            border: 1px solid var(--border);
+            overflow: hidden;
+            background: #fcfcfd;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .process-img { 
+            max-width: 100%; 
+            height: auto; /* 关键：保持原始比例，不拉伸 */
+            display: block;
+        }
 
         .sidebar-box { background: var(--gray); padding: 30px; border-radius: 12px; border: 1px solid var(--border); position: sticky; top: 100px; }
         .sidebar-box h3 { font-size: 0.65rem; text-transform: uppercase; color: var(--sub); margin-bottom: 10px; letter-spacing: 1.5px; }
         .sidebar-box p { font-weight: 600; font-size: 0.85rem; margin-bottom: 25px; color: var(--text); }
 
-        @media (max-width: 768px) { .main-grid { grid-template-columns: 1fr; } h1 { font-size: 1.8rem; } }
+        @media (max-width: 768px) { 
+            .main-grid { grid-template-columns: 1fr; } 
+            .process-gallery { grid-template-columns: 1fr; } 
+            h1 { font-size: 1.8rem; } 
+        }
     </style>
 </head>
 <body>
@@ -61,53 +84,69 @@
     </nav>
 
     <div class="container">
-        <h1>Hand Coding: Multi-user Interaction</h1>
-        <p class="tagline">An interactive logic experiment using ml5.js handPose and Websockets for real-time collaboration.</p>
+        <h1>Interactive Hand Heart Game</h1>
+        <p class="tagline">An interactive experience built with p5.js and ml5.js HandPose exploring physical connection.</p>
 
         <div class="hero-media">
-            <img src="coding_hero.png" alt="Creative Coding Preview">
+            <iframe 
+                src="https://www.youtube.com/embed/pJJBtTTjpDY?rel=0&modestbranding=1" 
+                title="Interactive Hand Heart Game Demo" 
+                allowfullscreen>
+            </iframe>
         </div>
 
         <div class="main-grid">
             <div class="content">
                 <section>
-                    <h2>01. Concept</h2>
-                    <p>This project investigates how computer vision can facilitate collaborative digital play. I developed an interactive canvas where users can "unlock" content by coordinating their physical hand movements in a shared virtual space.</p>
+                    <h2>01. Concept & Reflection</h2>
+                    <p>The main idea of this project was to explore how physical distance can affect our emotions and how we connect with others. At first, I considered <strong>BodyPose</strong> for tracking, but I found that positioning two people for a single camera was difficult, especially when sharing one screen.</p>
+                    <p>I pivoted to <strong>HandPose</strong>, which proved more responsive and easier to use when players are close together in front of one webcam.</p>
                 </section>
 
                 <section>
-                    <h2>02. Technical Implementation</h2>
-                    <p>Using <strong>ml5.js (handPose)</strong>, I implemented logic to detect the coordinates of index finger tips. The system calculates the distance between users' fingers to trigger events.</p>
-                    
-                    <pre><code><span class="code-comment">// Tracking index fingers from multiple users</span>
-<span class="code-keyword">let</span> d = dist(user1.indexX, user1.indexY, user2.indexX, user2.indexY);
-
-<span class="code-keyword">if</span> (d < 30) {
-    gameState = <span class="code-keyword">'unlocked'</span>;
-    triggerAnimation();
-}</code></pre>
+                    <h2>02. Interaction Instructions</h2>
+                    <div class="step-box">
+                        <span class="step-num">Step 1: Start</span>
+                        <p style="font-size: 0.85rem; margin:0;">Raise one hand and point your index finger toward a gray heart on the screen to begin.</p>
+                    </div>
+                    <div class="step-box">
+                        <span class="step-num">Step 2: Draw</span>
+                        <p style="font-size: 0.85rem; margin:0;">A heart appears between your thumb and index finger; move your hand to draw.</p>
+                    </div>
+                    <div class="step-box">
+                        <span class="step-num">Step 3: Customize</span>
+                        <p style="font-size: 0.85rem; margin:0;">Pinch your thumb and index finger together to change the heart's color.</p>
+                    </div>
+                    <div class="step-box">
+                        <span class="step-num">Step 4: Connect</span>
+                        <p style="font-size: 0.85rem; margin:0;">Bring your hands closer to the other player. A big red heart will appear when you get close enough.</p>
+                    </div>
                 </section>
 
+                <div class="process-gallery">
+                    <div class="process-img-container"><img src="hand1.png" alt="Interaction 1" class="process-img"></div>
+                    <div class="process-img-container"><img src="hand2.png" alt="Interaction 2" class="process-img"></div>
+                    <div class="process-img-container"><img src="hand3.png" alt="Interaction 3" class="process-img"></div>
+                    <div class="process-img-container"><img src="hand5.png" alt="Interaction 5" class="process-img"></div>
+                </div>
+
                 <section>
-                    <h2>03. Networking with Websockets</h2>
-                    <p>To enable the multi-user experience, I built a server-side architecture using <strong>Socket.io</strong>. This ensures that hand position data is synced across all clients with minimal latency, allowing for smooth, real-time interaction.</p>
+                    <h2>03. Future Roadmap</h2>
+                    <p>In the future, I hope to continue working on this project by making it work over a network using <strong>WebSockets</strong>. This would allow people to connect and interact from different locations using their own cameras.</p>
                 </section>
             </div>
 
             <aside class="sidebar">
                 <div class="sidebar-box">
                     <h3>Technologies</h3>
-                    <p>p5.js<br>ml5.js (HandPose)<br>Websockets (Socket.io)<br>Node.js</p>
-
-                    <h3>Core Features</h3>
-                    <p>Computer Vision<br>Real-time Syncing<br>Interactive Logic</p>
-
-                    <h3>Context</h3>
-                    <p>Creative Coding Lab</p>
+                    <p>p5.js<br>ml5.js (HandPose)<br>JavaScript</p>
+                    <h3>Interaction Focus</h3>
+                    <p>Computer Vision<br>Proximity Sensing<br>Collaborative Play</p>
+                    <h3>Category</h3>
+                    <p>Creative Coding</p>
                 </div>
             </aside>
         </div>
     </div>
-
 </body>
 </html>
