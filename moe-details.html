@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Metaverse for Education | Yinqi Huang</title>
+    <style>
+        :root {
+            --bg: #ffffff;
+            --text: #1a1a1a;
+            --accent: #0ea5e9;
+            --gray: #f9f9fb;
+            --border: #eeeeee;
+        }
+
+        body { font-family: 'Inter', sans-serif; margin: 0; background: var(--bg); color: var(--text); line-height: 1.8; }
+        nav { padding: 1.5rem 5%; border-bottom: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; position: sticky; top:0; background:white; z-index:100; }
+        .back-btn { text-decoration: none; color: var(--accent); font-weight: 600; }
+        
+        .container { max-width: 1100px; margin: 60px auto; padding: 0 5%; }
+        
+        h1 { font-size: 3.5rem; font-weight: 800; letter-spacing: -2px; margin-bottom: 10px; line-height: 1.1; }
+        .tagline { font-size: 1.25rem; color: #666; margin-bottom: 20px; }
+        .status-badge { display: inline-block; background: #fff7ed; color: #c2410c; padding: 4px 12px; border-radius: 20px; font-size: 0.85rem; font-weight: 700; border: 1px solid #fdba74; margin-bottom: 50px; }
+
+        .hero-media { 
+            width: 100%; aspect-ratio: 16/9; border-radius: 32px; overflow: hidden; 
+            margin-bottom: 60px; box-shadow: 0 30px 60px rgba(0,0,0,0.1); background: #000; 
+        }
+        .hero-media video { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+        .main-grid { display: grid; grid-template-columns: 2fr 1fr; gap: 80px; }
+
+        .cs-section { margin-bottom: 60px; }
+        h2 { font-size: 1.8rem; font-weight: 800; margin-bottom: 24px; color: var(--accent); text-transform: uppercase; letter-spacing: 1px; }
+        h3 { font-size: 1.3rem; font-weight: 700; margin: 30px 0 15px 0; color: #111; }
+        p { font-size: 1.1rem; color: #444; margin-bottom: 20px; text-align: justify; }
+        ul { margin-bottom: 25px; color: #444; padding-left: 20px; }
+        li { margin-bottom: 12px; }
+
+        .sidebar-box { background: var(--gray); padding: 35px; border-radius: 24px; position: sticky; top: 120px; }
+        .sidebar-box h3 { font-size: 0.8rem; text-transform: uppercase; color: #999; margin-bottom: 10px; letter-spacing: 1px; }
+        .sidebar-box p { font-weight: 700; font-size: 1rem; margin-bottom: 30px; color: var(--text); }
+        .status-indicator { color: #ea580c; font-weight: 800; }
+
+        .problem-card { border-left: 5px solid #ef4444; background: #fff5f5; padding: 30px; border-radius: 0 20px 20px 0; margin: 25px 0; }
+        .solution-card { border-left: 5px solid #10b981; background: #f0fdf4; padding: 30px; border-radius: 0 20px 20px 0; margin: 25px 0; }
+        .card-label { font-weight: 800; font-size: 0.75rem; text-transform: uppercase; display: block; margin-bottom: 10px; }
+
+        .gallery-title { font-size: 1.8rem; font-weight: 800; margin: 80px 0 30px 0; border-top: 1px solid var(--border); padding-top: 60px; }
+        .gallery-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-bottom: 100px; }
+        .gallery-item { border-radius: 16px; overflow: hidden; border: 1px solid var(--border); }
+        .gallery-item img { width: 100%; aspect-ratio: 4/3; object-fit: cover; display: block; }
+
+        @media (max-width: 768px) { .main-grid, .gallery-grid { grid-template-columns: 1fr; } h1 { font-size: 2.5rem; } }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html" class="back-btn">← Back to Portfolio</a>
+        <div style="font-weight: 800;">YINQI HUANG</div>
+    </nav>
+
+    <div class="container">
+        <h1>Metaverse for Education</h1>
+        <p class="tagline">Development Log: Bridging Physical and Virtual MakerSpaces on Quest 3.</p>
+        <div class="status-badge">Phase: Development in Progress</div>
+
+        <div class="hero-media">
+            <video controls poster="moe_hero.png">
+                <source src="moe_project.mp4" type="video/mp4">
+            </video>
+        </div>
+
+        <div class="main-grid">
+            <div class="content">
+                
+                <section class="cs-section">
+                    <h2>01. Research & Objectives</h2>
+                    <p>This research group within the NYU VIP program aims to develop immersive educational environments using metaverse platforms and mixed reality technologies. Our goal is to create learning spaces that replicate university labs, specifically the MakerSpace, accessible via devices like the Meta Quest 3.</p>
+                    
+                    <h3>Short-Term Goals</h3>
+                    <ul>
+                        <li>Develop a virtual reality environment of MakerSpace using the Unity Engine.</li>
+                        <li>Integrate sensing technologies to track physical workspace dynamics.</li>
+                        <li>Explore AI-driven object recognition for interactive machine tutorials.</li>
+                    </ul>
+                </section>
+
+                <section class="cs-section">
+                    <h2>02. Technical Documentation & Troubleshooting</h2>
+                    <p>As a member of the AR Subgroup, my focus is on the Mixed Reality pipeline. I encountered significant technical hurdles due to rapidly evolving SDKs, which required a deep dive into official migration guides.</p>
+
+                    <div class="problem-card">
+                        <span class="card-label" style="color:#c53030;">The Challenge: Outdated SDK Prefabs</span>
+                        During development, I found that the <strong>WebCamTextureManager</strong> prefab, which many tutorials relied on, was missing from the latest project files. It had been deprecated in favor of newer passthrough workflows, leading to undefined path errors.
+                    </div>
+
+                    <div class="solution-card">
+                        <span class="card-label" style="color:#166534;">The Solution: SDK Migration</span>
+                        I successfully migrated the project to the <strong>PassthroughCameraAccess</strong> workflow by following official Meta documentation. Additionally, I moved my deployment process to the <strong>Meta Quest Developer Hub</strong>, which proved far more stable for real-time debugging than Unity's default Build & Run process.
+                    </div>
+                </section>
+
+                <section class="cs-section">
+                    <h2>03. Current Status & Reflections</h2>
+                    <p>This project is currently <strong>in progress</strong>. Due to the time required to resolve complex compatibility issues and SDK name changes (such as Unity Sentis being renamed to Inference Engine), the development has focused on stabilizing the core pipeline.</p>
+                    <p>The experience has been pivotal in my growth as a developer, allowing me to transition from a Java background into <strong>C# scripting</strong> and Unity's component-based architecture. I am now fully comfortable with the development workflow and aim to complete the full independent implementation in the upcoming term.</p>
+                </section>
+
+            </div>
+
+            <aside class="sidebar">
+                <div class="sidebar-box">
+                    <h3>Project Status</h3>
+                    <p class="status-indicator">Work in Progress</p>
+
+                    <h3>Subgroup</h3>
+                    <p>AR Subgroup (Quest 3 Focus)</p>
+
+                    <h3>Tech Stack</h3>
+                    <p>Unity Engine<br>C# Scripting<br>Meta Quest Developer Hub</p>
+
+                    <h3>Organization</h3>
+                    <p>NYU VIP Research Group</p>
+                </div>
+            </aside>
+        </div>
+
+        <div class="gallery-title">Current Development Progress</div>
+        <div class="gallery-grid">
+            <div class="gallery-item"><img src="moe1.png" alt="Development Screenshot 1"></div>
+            <div class="gallery-item"><img src="moe2.png" alt="Development Screenshot 2"></div>
+            <div class="gallery-item"><img src="moe3.png" alt="Development Screenshot 3"></div>
+        </div>
+    </div>
+
+</body>
+</html>

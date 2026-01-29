@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yinqi Huang | Portfolio</title>
+    <style>
+        :root {
+            --bg: #ffffff;
+            --text: #1a1a1a;
+            --accent: #6366f1;
+            --gray: #f9f9fb;
+            --border: #eeeeee;
+        }
+
+        body { font-family: 'Inter', -apple-system, sans-serif; margin: 0; background: var(--bg); color: var(--text); line-height: 1.6; }
+        
+        nav { 
+            padding: 1.5rem 5%; 
+            display: flex; 
+            justify-content: space-between; 
+            border-bottom: 1px solid var(--border);
+            position: sticky; top: 0; background: rgba(255,255,255,0.8); backdrop-filter: blur(10px); z-index: 100;
+        }
+        
+        .nav-links { display: flex; gap: 25px; align-items: center; }
+        .nav-links a { text-decoration: none; color: var(--text); font-weight: 600; font-size: 0.9rem; }
+
+        header { padding: 100px 5% 60px 5%; max-width: 900px; }
+        h1 { font-size: 3.2rem; font-weight: 800; letter-spacing: -1.5px; margin-bottom: 24px; }
+
+        .work-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 40px; padding: 0 5% 60px 5%; }
+        
+        .card { 
+            background: var(--gray); 
+            border-radius: 24px; 
+            border: 1px solid var(--border); 
+            transition: all 0.5s cubic-bezier(0.2, 1, 0.3, 1); 
+            overflow: hidden; 
+            text-decoration: none; 
+            color: inherit; 
+            display: block; 
+        }
+        
+        .card:hover { transform: translateY(-10px); border-color: var(--accent); box-shadow: 0 20px 40px rgba(99, 102, 241, 0.1); background: #fff; }
+        .card img { width: 100%; aspect-ratio: 16/10; object-fit: cover; border-bottom: 1px solid var(--border); }
+        
+        .content { padding: 30px; }
+        .tag { color: var(--accent); font-weight: 700; font-size: 0.7rem; text-transform: uppercase; margin-bottom: 10px; display: block; }
+        h3 { margin: 10px 0; font-size: 1.5rem; font-weight: 800; }
+        .view-link { font-size: 0.9rem; font-weight: 700; color: var(--accent); margin-top: 15px; display: block; }
+
+        .info-section { padding: 80px 5%; background: var(--gray); border-top: 1px solid var(--border); display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+        .info-item { margin-bottom: 2rem; }
+        h2 { font-weight: 800; margin-bottom: 30px; font-size: 2rem; }
+        
+        @media (max-width: 768px) { .info-section { grid-template-columns: 1fr; } h1 { font-size: 2.5rem; } }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div style="font-weight: 800; letter-spacing: 1px;">YINQI HUANG</div>
+        <div class="nav-links">
+            <a href="about.html">About Me</a>
+            <div style="font-size: 0.9rem; font-weight: 500; color: #666;">yh2426@nyu.edu</div>
+        </div>
+    </nav>
+
+    <header>
+        <h1>Designing <span style="color:var(--accent)">spatial worlds</span> and interactive stories.</h1>
+        <p style="font-size: 1.25rem; color: #666; font-weight: 400;">XR Designer. Currently at NYU IDM.</p>
+    </header>
+
+    <section class="work-grid">
+        <a href="moe-details.html" class="card">
+            <img src="moe3.png" alt="Metaverse for Education">
+            <div class="content">
+                <span class="tag">Unity • Quest 3 • Research</span>
+                <h3>Metaverse for Education</h3>
+                <p style="color: #555;">Mixed Reality development log focusing on SDK migration and hybrid learning environments.</p>
+                <span class="view-link">View Development Log →</span>
+            </div>
+        </a>
+
+        <a href="vp-details.html" class="card">
+            <img src="vp_project.png" alt="Virtual Production">
+            <div class="content">
+                <span class="tag">Unreal Engine 5 • MoCap • Cinematic</span>
+                <h3>Virtual Production Project</h3>
+                <p style="color: #555;">A high-fidelity virtual cinematic exploring Motion Capture workflows and 90s aesthetic stylization.</p>
+                <span class="view-link">View Case Study →</span>
+            </div>
+        </a>
+
+        <a href="ux-research.html" class="card">
+            <img src="ux_final.png" alt="UX Research Project">
+            <div class="content">
+                <span class="tag">UX Research • Spatial.io • VR</span>
+                <h3>Immersive Learning Research</h3>
+                <p style="color: #555;">Investigating student engagement through immersive VR museum experiences on Spatial.io.</p>
+                <span class="view-link">View Case Study →</span>
+            </div>
+        </a>
+    </section>
+
+    <section class="info-section">
+        <div>
+            <h2>Education</h2>
+            <div class="info-item">
+                <p><strong>New York University</strong><br>MS in Integrated Design & Media</p>
+            </div>
+            <div class="info-item">
+                <p><strong>University of Toronto</strong><br>Master of Education</p>
+            </div>
+            <div class="info-item">
+                <p><strong>University of Waterloo</strong><br>Bachelor of Global Business and Digital Arts (Focus on UX & Creative Coding)</p>
+            </div>
+        </div>
+        <div>
+            <h2>Professional</h2>
+            <div class="info-item">
+                <p><strong>NYU VIP Team</strong><br>XR Developer</p>
+            </div>
+            <div class="info-item">
+                <p><strong>Revela, Inc.</strong><br>Freelance UX Designer</p>
+            </div>
+            <div class="info-item">
+                <p><strong>Freelance</strong><br>XR Designer</p>
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>
