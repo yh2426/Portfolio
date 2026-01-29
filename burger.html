@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Burger Coding | Yinqi Huang</title>
+    <title>Burger & Fries Generator | Yinqi Huang</title>
     <style>
         :root { 
-            --bg: #ffffff; --text: #111111; --accent: #6366f1; --gray: #fcfcfd; --border: #f2f2f2; --sub: #999999; 
+            --bg: #ffffff; --text: #111111; --accent: #6366f1; --gray: #fcfcfd; --border: #f2f2f2; --sub: #999999; --code-bg: #1e1e1e;
         }
 
         body { font-family: 'Inter', -apple-system, sans-serif; margin: 0; background: var(--bg); color: var(--text); line-height: 1.6; -webkit-font-smoothing: antialiased; }
@@ -26,7 +26,7 @@
         h1 { font-size: 2.2rem; font-weight: 800; letter-spacing: -1.5px; margin-bottom: 10px; line-height: 1.1; }
         .tagline { font-size: 1rem; color: var(--sub); margin-bottom: 50px; }
 
-        /* 视频容器 */
+        /* 视频容器：16:9 比例 */
         .hero-media { 
             width: 100%; position: relative; padding-bottom: 56.25%; height: 0;
             border-radius: 4px; overflow: hidden; margin-bottom: 60px; 
@@ -39,34 +39,38 @@
         h2 { font-size: 0.8rem; font-weight: 800; margin-bottom: 25px; color: var(--accent); text-transform: uppercase; letter-spacing: 2px; }
         p { font-size: 0.95rem; color: #444; margin-bottom: 20px; text-align: justify; }
 
-        /* 图片画廊：修正比例显示，不剪裁 */
+        /* 代码展示样式 */
+        pre { 
+            background: var(--code-bg); color: #d4d4d4; padding: 20px; 
+            border-radius: 4px; font-family: 'Fira Code', monospace; font-size: 0.8rem; 
+            overflow-x: auto; border: 1px solid #333; margin: 20px 0;
+        }
+
+        /* 图片画廊：修正放大问题 */
         .process-gallery { 
             display: grid; 
             grid-template-columns: repeat(2, 1fr); 
             gap: 20px; 
             margin: 40px 0 80px 0; 
         }
-        .process-img-container {
-            width: 100%;
-            border-radius: 4px;
-            border: 1px solid var(--border);
-            overflow: hidden;
-            background: #fcfcfd;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+        .process-img-container { 
+            width: 100%; 
+            border-radius: 4px; 
+            border: 1px solid var(--border); 
+            overflow: hidden; 
+            background: #fcfcfd; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
         }
         .process-img { max-width: 100%; height: auto; display: block; }
 
+        /* 侧边栏卡片 */
         .sidebar-box { background: var(--gray); padding: 30px; border-radius: 12px; border: 1px solid var(--border); position: sticky; top: 100px; }
         .sidebar-box h3 { font-size: 0.65rem; text-transform: uppercase; color: var(--sub); margin-bottom: 10px; letter-spacing: 1.5px; }
         .sidebar-box p { font-weight: 600; font-size: 0.85rem; margin-bottom: 25px; color: var(--text); }
 
-        @media (max-width: 768px) { 
-            .main-grid { grid-template-columns: 1fr; } 
-            .process-gallery { grid-template-columns: 1fr; } 
-            h1 { font-size: 1.8rem; } 
-        }
+        @media (max-width: 768px) { .main-grid { grid-template-columns: 1fr; } .process-gallery { grid-template-columns: 1fr; } }
     </style>
 </head>
 <body>
@@ -77,13 +81,14 @@
     </nav>
 
     <div class="container">
-        <h1>Burger Interaction Lab</h1>
-        <p class="tagline">Creative coding experiment focusing on dynamic UI and physics-based interaction.</p>
+        <h1>Burger & Fries Generator</h1>
+        <p class="tagline">An interactive experience built with p5.js, exploring the intersection of code and my favorite comfort food.</p>
 
         <div class="hero-media">
             <iframe 
-                src="https://www.youtube.com/embed/YOUR_VIDEO_ID" 
-                title="Burger Interaction Demo" 
+                src="https://www.youtube.com/embed/ti1RHOt59Dw?rel=0&modestbranding=1" 
+                title="Burger & Fries Generator Demo" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                 allowfullscreen>
             </iframe>
         </div>
@@ -91,29 +96,52 @@
         <div class="main-grid">
             <div class="content">
                 <section>
-                    <h2>01. Concept</h2>
-                    <p>This project explores playful interaction design through the simulation of a digital "burger" building experience. Using <strong>p5.js</strong>, I focused on how object states and user input can create a satisfying tactile feel in a 2D environment.</p>
+                    <h2>01. Concept & Inspiration</h2>
+                    <p>I designed this Burger and Fries Generator because they are my favorite foods. Beyond coding, this project connects to a personal dream I’ve held for a long time: <strong>opening my own fast food restaurant someday</strong>.</p>
+                    <p>The goal was to create a satisfying, randomized experience where users can "build" their own plate using simple keyboard commands.</p>
                 </section>
 
                 <section>
-                    <h2>02. Technical Logic</h2>
-                    <p>The project utilizes object-oriented programming to manage different burger ingredients as individual classes. Collision detection and gravity-based physics were implemented to give the ingredients a sense of weight and response when stacked.</p>
+                    <h2>02. Technical Implementation</h2>
+                    <p>I used <strong>Object-Oriented Programming (OOP)</strong> to create dynamic <code>Burger</code> and <code>Fries</code> classes. Each burger type (Classic, Veggie, Double) features a unique combination of layers like lettuce, tomato, cheese, and patties.</p>
+                    
+                    <pre><code>// Dynamic Burger Layer Logic
+if (type === "classic") {
+  this.layers = ["lettuce", "cheese", "patty"];
+} else if (type === "veggie") {
+  this.layers = ["lettuce", "tomato", "cheese", "tomato"];
+} else if (type === "double") {
+  this.layers = ["cheese", "patty", "cheese", "patty"];
+}</code></pre>
                 </section>
 
                 <div class="process-gallery">
-                    <div class="process-img-container"><img src="burger1.png" alt="Burger Process 1" class="process-img"></div>
-                    <div class="process-img-container"><img src="burger2.png" alt="Burger Process 2" class="process-img"></div>
-                    <div class="process-img-container"><img src="burger3.png" alt="Burger Process 3" class="process-img"></div>
-                    <div class="process-img-container"><img src="burger4.png" alt="Burger Process 4" class="process-img"></div>
+                    <div class="process-img-container">
+                        <img src="burger2.png" alt="Veggie Burger Generation" class="process-img">
+                    </div>
+                    <div class="process-img-container">
+                        <img src="burger3.png" alt="Double Burger Generation" class="process-img">
+                    </div>
                 </div>
+
+                <section>
+                    <h2>03. Interaction Guide</h2>
+                    <p>The interaction is driven by the <code>keyPressed()</code> function:</p>
+                    <ul>
+                        <li><strong>C, V, D</strong>: Adds a Classic, Veggie, or Double burger with random size and position.</li>
+                        <li><strong>F</strong>: Adds a cluster of 10 randomly placed and rotated fries.</li>
+                    </ul>
+                </section>
             </div>
 
             <aside class="sidebar">
                 <div class="sidebar-box">
                     <h3>Technologies</h3>
-                    <p>p5.js<br>JavaScript<br>CSS3</p>
-                    <h3>Interaction Focus</h3>
-                    <p>Physics Simulation<br>State Management<br>Game Design</p>
+                    <p>p5.js<br>JavaScript (OOP)<br>Canvas Rendering</p>
+                    
+                    <h3>Controls</h3>
+                    <p>C: Classic Burger<br>V: Veggie Burger<br>D: Double Burger<br>F: Add Fries</p>
+
                     <h3>Category</h3>
                     <p>Creative Coding</p>
                 </div>
