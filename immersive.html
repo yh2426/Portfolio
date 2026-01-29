@@ -5,38 +5,70 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>UX Research: Immersive Learning | Yinqi Huang</title>
     <style>
-        :root { --bg: #ffffff; --text: #1a1a1a; --accent: #6366f1; --gray: #f9f9fb; --border: #eeeeee; }
-        body { font-family: 'Inter', sans-serif; margin: 0; background: var(--bg); color: var(--text); line-height: 1.8; }
-        nav { padding: 1.5rem 5%; border-bottom: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; position: sticky; top:0; background:white; z-index:100; }
-        .back-btn { text-decoration: none; color: var(--accent); font-weight: 600; }
-        .container { max-width: 1100px; margin: 60px auto; padding: 0 5%; }
-        h1 { font-size: 3.5rem; font-weight: 800; letter-spacing: -2px; margin-bottom: 10px; line-height: 1.1; }
-        .tagline { font-size: 1.25rem; color: #666; margin-bottom: 50px; }
-        .hero-media { width: 100%; aspect-ratio: 16/9; border-radius: 32px; overflow: hidden; margin-bottom: 60px; box-shadow: 0 30px 60px rgba(0,0,0,0.1); background: #eee; }
-        .hero-media img { width: 100%; height: 100%; object-fit: cover; display: block; }
-        .main-grid { display: grid; grid-template-columns: 2fr 1fr; gap: 80px; }
-        .cs-section { margin-bottom: 60px; }
-        h2 { font-size: 1.8rem; font-weight: 800; margin-bottom: 24px; color: var(--accent); text-transform: uppercase; letter-spacing: 1px; }
-        p { font-size: 1.1rem; color: #444; margin-bottom: 20px; text-align: justify; }
-        .problem-card { border-left: 5px solid #ef4444; background: #fff5f5; padding: 30px; border-radius: 0 20px 20px 0; margin: 25px 0; }
-        .solution-card { border-left: 5px solid #10b981; background: #f0fdf4; padding: 30px; border-radius: 0 20px 20px 0; margin: 25px 0; }
-        .card-label { font-weight: 800; font-size: 0.75rem; text-transform: uppercase; display: block; margin-bottom: 10px; }
-        .sidebar-box { background: var(--gray); padding: 35px; border-radius: 24px; position: sticky; top: 120px; }
-        .sidebar-box h3 { font-size: 0.8rem; text-transform: uppercase; color: #999; margin-bottom: 10px; letter-spacing: 1px; }
-        .sidebar-box p { font-weight: 700; font-size: 1rem; margin-bottom: 30px; color: var(--text); }
+        :root { 
+            --bg: #ffffff; --text: #111111; --accent: #6366f1; --gray: #fcfcfd; --border: #f2f2f2; --sub: #999999; 
+        }
+
+        body { font-family: 'Inter', -apple-system, sans-serif; margin: 0; background: var(--bg); color: var(--text); line-height: 1.6; -webkit-font-smoothing: antialiased; }
         
-        /* 修改为 4 列网格，完美适配 8 张图 */
-        .gallery-title { font-size: 1.8rem; font-weight: 800; margin: 80px 0 30px 0; border-top: 1px solid var(--border); padding-top: 60px; }
-        .gallery-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px; margin-bottom: 100px; }
-        .gallery-item { border-radius: 12px; overflow: hidden; border: 1px solid var(--border); background: #fff; }
+        /* 统一导航栏：与所有详情页对齐 */
+        nav { 
+            padding: 1.2rem 5%; 
+            display: flex; justify-content: space-between; align-items: center; 
+            border-bottom: 1px solid var(--border);
+            position: sticky; top: 0; background: rgba(255,255,255,0.9); backdrop-filter: blur(20px); z-index: 100;
+        }
+        .back-link { 
+            text-decoration: none; color: var(--text); font-weight: 700; 
+            font-size: 0.7rem; text-transform: uppercase; letter-spacing: 1px; 
+        }
+        .back-link:hover { color: var(--accent); }
+        .nav-brand { font-weight: 900; letter-spacing: 2px; font-size: 0.8rem; }
+
+        .container { max-width: 900px; margin: 60px auto; padding: 0 5%; }
+        
+        h1 { font-size: 2.2rem; font-weight: 800; letter-spacing: -1.5px; margin-bottom: 10px; line-height: 1.1; }
+        .tagline { font-size: 1rem; color: var(--sub); margin-bottom: 50px; }
+
+        .hero-media { 
+            width: 100%; aspect-ratio: 16/9; border-radius: 4px; overflow: hidden; 
+            margin-bottom: 60px; border: 1px solid var(--border); background: #f9f9fb; 
+        }
+        .hero-media img { width: 100%; height: 100%; object-fit: cover; }
+
+        .main-grid { display: grid; grid-template-columns: 2fr 1fr; gap: 60px; }
+        .cs-section { margin-bottom: 60px; }
+        h2 { font-size: 0.8rem; font-weight: 800; margin-bottom: 20px; color: var(--accent); text-transform: uppercase; letter-spacing: 2px; }
+        p { font-size: 0.95rem; color: #444; margin-bottom: 20px; text-align: justify; }
+
+        .problem-card { border-left: 3px solid #ff4d4d; background: #fffafa; padding: 20px; border-radius: 2px; margin: 25px 0; font-size: 0.9rem; }
+        .solution-card { border-left: 3px solid #00c853; background: #f7fff9; padding: 20px; border-radius: 2px; margin: 25px 0; font-size: 0.9rem; }
+        .card-label { font-weight: 800; font-size: 0.6rem; text-transform: uppercase; display: block; margin-bottom: 8px; letter-spacing: 1px; }
+
+        .sidebar-box { background: var(--gray); padding: 30px; border-radius: 12px; border: 1px solid var(--border); position: sticky; top: 100px; }
+        .sidebar-box h3 { font-size: 0.65rem; text-transform: uppercase; color: var(--sub); margin-bottom: 10px; letter-spacing: 1.5px; }
+        .sidebar-box p { font-weight: 600; font-size: 0.85rem; margin-bottom: 25px; color: var(--text); }
+        
+        /* 过程文档：4列精致小网格 */
+        .gallery-title { font-size: 1.2rem; font-weight: 800; margin: 80px 0 30px 0; border-top: 1px solid var(--border); padding-top: 60px; letter-spacing: -0.5px; }
+        .gallery-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-bottom: 100px; }
+        .gallery-item { border-radius: 2px; overflow: hidden; border: 1px solid var(--border); }
         .gallery-item img { width: 100%; aspect-ratio: 4/3; object-fit: cover; display: block; }
         
-        @media (max-width: 1024px) { .gallery-grid { grid-template-columns: repeat(2, 1fr); } }
-        @media (max-width: 768px) { .main-grid { grid-template-columns: 1fr; } .gallery-grid { grid-template-columns: 1fr; } h1 { font-size: 2.5rem; } }
+        @media (max-width: 768px) { 
+            .main-grid { grid-template-columns: 1fr; } 
+            .gallery-grid { grid-template-columns: repeat(2, 1fr); } 
+            h1 { font-size: 1.8rem; } 
+        }
     </style>
 </head>
 <body>
-    <nav><a href="index.html" class="back-btn">← Back to Portfolio</a><div style="font-weight: 800;">YINQI HUANG</div></nav>
+
+    <nav>
+        <a href="index.html" class="back-link">← BACK</a>
+        <div class="nav-brand">YINQI HUANG</div>
+    </nav>
+
     <div class="container">
         <h1>UX Research: Immersive Learning</h1>
         <p class="tagline">Investigating student engagement through VR environments on Spatial.io.</p>
@@ -54,27 +86,27 @@
 
                 <section class="cs-section">
                     <h2>02. Research & Methods</h2>
-                    <p>We used mess mapping to organize factors related to motivation and attention, and conducted secondary research on emotionally meaningful experiences in education. We surveyed 24 NYU students to understand their primary causes of boredom and their familiarity with immersive technologies.</p>
+                    <p>We used mess mapping to organize factors related to motivation and attention, and conducted secondary research on emotionally meaningful experiences. We surveyed 24 NYU students to understand causes of boredom and familiarity with immersive tech.</p>
                     
                     <div class="problem-card">
-                        <span class="card-label" style="color:#c53030;">The Challenge</span>
+                        <span class="card-label">The Challenge</span>
                         Findings revealed that many students struggle with attention not due to a lack of interest, but because classes often lack active interaction and meaningful engagement.
                     </div>
                 </section>
 
                 <section class="cs-section">
                     <h2>03. Prototyping on Spatial.io</h2>
-                    <p>Using Spatial.io, we prototyped a VR museum environment. We conducted user testing with students to observe their behavior and movement within the virtual space, focusing on whether the immersive setting improved their connection to the content.</p>
+                    <p>Using Spatial.io, we prototyped a VR museum environment. We conducted user testing with students to observe behavior and movement, focusing on whether the immersive setting improved their connection to the content.</p>
                     
                     <div class="solution-card">
-                        <span class="card-label" style="color:#166534;">The Solution</span>
-                        Based on user feedback regarding navigation and motion sickness, we refined the prototype with clearer directional cues and informative panels to ensure a smoother, more engaging learning experience.
+                        <span class="card-label">The Solution</span>
+                        Based on user feedback regarding motion sickness, we refined the prototype with clearer directional cues and informative panels to ensure a smoother learning experience.
                     </div>
                 </section>
 
                 <section class="cs-section">
                     <h2>04. Findings & Reflections</h2>
-                    <p>User feedback showed that the VR space successfully enhanced focus, though technical issues like dizziness during rapid movement persist. This project highlighted that user testing is essential not just for validating ideas, but for uncovering hidden interaction problems in spatial environments.</p>
+                    <p>User feedback showed that the VR space successfully enhanced focus, though technical issues like dizziness persist. This project highlighted that user testing is essential for uncovering hidden interaction problems in spatial environments.</p>
                 </section>
             </div>
 
@@ -102,5 +134,6 @@
             <div class="gallery-item"><img src="ux8.png"></div>
         </div>
     </div>
+
 </body>
 </html>
