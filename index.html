@@ -49,11 +49,10 @@
         }
         header p { font-size: 1rem; color: var(--sub); line-height: 1.6; max-width: 550px; }
 
-        /* --- 修正后的居中分类标签 --- */
         .category-label { 
             display: flex;
             align-items: center;
-            justify-content: center; /* 居中 */
+            justify-content: center; 
             gap: 20px;
             font-size: 0.6rem; 
             text-transform: uppercase; 
@@ -62,10 +61,9 @@
             margin: 100px 0 50px; 
             font-weight: 800; 
         }
-        /* 左右的小线条增加高级感 */
         .category-label::before, .category-label::after {
             content: "";
-            flex: 0 1 40px; /* 线条长度 */
+            flex: 0 1 40px; 
             height: 1px;
             background-color: #eee;
         }
@@ -156,9 +154,14 @@
 
     <div class="category-label">Creative Coding</div>
     <section class="work-grid">
-        <div style="grid-column: 1/-1; text-align: center; font-size: 0.65rem; color: #ddd; padding: 40px; border: 1px dashed #eee; letter-spacing: 2px;">
-            [ PROJECTS IN DEVELOPMENT ]
-        </div>
+        <a href="handcoding.html" class="card">
+            <div class="img-wrap">
+                <img src="hand4.png" alt="Hand Heart Game">
+            </div>
+            <span class="tag">p5.js • ml5.js • HandPose</span>
+            <h3>Interactive Hand Heart Game</h3>
+            <p class="project-note">A two-player experience exploring emotional connection through computer vision and proximity-based interaction.</p>
+        </a>
     </section>
 
     <section class="info-section">
