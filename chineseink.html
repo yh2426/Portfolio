@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Poker Memory Game | Yinqi Huang</title>
+    <title>Chinese Ink Interaction | Yinqi Huang</title>
     <style>
         :root { --bg: #ffffff; --text: #111111; --accent: #6366f1; --gray: #fcfcfd; --border: #f2f2f2; --sub: #999999; }
         body { font-family: 'Inter', -apple-system, sans-serif; margin: 0; background: var(--bg); color: var(--text); line-height: 1.6; -webkit-font-smoothing: antialiased; }
@@ -13,7 +13,7 @@
         
         .container { max-width: 1000px; margin: 60px auto; padding: 0 5%; }
         h1 { font-size: 2.5rem; font-weight: 800; letter-spacing: -1.5px; margin-bottom: 10px; }
-        .tagline { font-size: 1.1rem; color: #b08d57; font-weight: 600; margin-bottom: 50px; }
+        .tagline { font-size: 1.1rem; color: #666; font-weight: 600; margin-bottom: 50px; }
 
         .hero-img { width: 100%; border-radius: 8px; border: 1px solid var(--border); margin-bottom: 60px; display: block; }
 
@@ -23,19 +23,35 @@
         p { font-size: 0.95rem; color: #444; margin-bottom: 20px; }
         
         .full-width-img { width: 100%; border-radius: 4px; border: 1px solid var(--border); margin: 20px 0; }
-        .grid-img { width: 100%; border-radius: 4px; border: 1px solid var(--border); }
         .process-gallery { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; margin: 30px 0; }
+        .grid-img { width: 100%; border-radius: 4px; border: 1px solid var(--border); }
 
-        .video-demo-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 40px; }
-        .video-box { width: 100%; position: relative; padding-bottom: 56.25%; height: 0; border-radius: 8px; overflow: hidden; background: #000; }
-        .video-box iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
-        .video-label { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; margin-top: 10px; color: var(--sub); text-align: center; }
+        .video-container { width: 100%; position: relative; padding-bottom: 56.25%; height: 0; border-radius: 8px; overflow: hidden; background: #000; margin: 30px 0; }
+        .video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
 
+        /* 侧边栏样式 */
         .sidebar-box { background: var(--gray); padding: 30px; border-radius: 12px; border: 1px solid var(--border); position: sticky; top: 100px; }
         .sidebar-box h3 { font-size: 0.65rem; text-transform: uppercase; color: var(--sub); margin-bottom: 10px; }
         .sidebar-box p { font-weight: 600; font-size: 0.85rem; margin-bottom: 25px; }
+        
+        /* 源码按钮 */
+        .source-link { 
+            display: inline-block; 
+            margin-top: 10px;
+            padding: 12px 20px; 
+            background: #111; 
+            color: #fff; 
+            text-decoration: none; 
+            border-radius: 6px; 
+            font-size: 0.7rem; 
+            font-weight: 800; 
+            text-transform: uppercase; 
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+        }
+        .source-link:hover { background: var(--accent); transform: translateY(-2px); }
 
-        @media (max-width: 768px) { .main-grid { grid-template-columns: 1fr; } .process-gallery, .video-demo-grid { grid-template-columns: 1fr; } }
+        @media (max-width: 768px) { .main-grid { grid-template-columns: 1fr; } .process-gallery { grid-template-columns: 1fr; } }
     </style>
 </head>
 <body>
@@ -45,66 +61,46 @@
     </nav>
 
     <div class="container">
-        <h1>Poker Memory Game</h1>
-        <p class="tagline">Cognitive Micro-break: Enhancing Focus Through Play.</p>
+        <h1>Chinese Ink Interaction</h1>
+        <p class="tagline">Digitalizing Shan-Shui Aesthetics via Generative Algorithms.</p>
 
-        <img src="Poker_Main.png" alt="Poker Game Main Screen" class="hero-img">
+        <img src="ink_main.png" alt="Chinese Ink Main Showcase" class="hero-img">
 
         <div class="main-grid">
             <div class="content">
                 <section>
-                    <h2>01. UX Research & Personas</h2>
-                    <p>My research focused on three core employee groups: the Efficiency Seeker, the Overwhelmed Employee, and the Growth-Minded Individual. The goal was to understand how a simple game could alleviate work stress and provide a brief cognitive "reset" during intense working hours.</p>
-                </section>
-
-                <section>
-                    <h2>02. Interaction Design & Flow</h2>
-                    <p>I mapped out the Game Flow to ensure the transitions between the Start Menu, Gameplay, and End results were intuitive and minimized cognitive load.</p>
-                    <img src="Poker_gameflow.png" alt="Poker Game Flow" class="full-width-img">
-                </section>
-
-                <section>
-                    <h2>03. Technical Development</h2>
-                    <p>Built using <strong>Processing (Java)</strong>, the project involved complex state management and array logic to handle card flipping and match detection.</p>
+                    <h2>01. Ideation & Brainstorming</h2>
+                    <p>This project began with a study of the organic diffusion of ink on varied surfaces. I mapped out the interaction between user input and generative "bleed" effects, ensuring the digital output retained the soul of traditional rice paper art.</p>
                     <div class="process-gallery">
-                        <img src="Poker_code1.png" alt="Coding Part 1" class="grid-img">
-                        <img src="Poker_code2.png" alt="Coding Part 2" class="grid-img">
+                        <img src="ink_brainstorm.png" alt="Process Brainstorming 1" class="grid-img">
+                        <img src="ink_brainstorm2.png" alt="Process Brainstorming 2" class="grid-img">
                     </div>
                 </section>
 
                 <section>
-                    <h2>04. Iteration & Improvement</h2>
-                    <p>Based on user feedback, I refined the visual hierarchy and feedback mechanisms. Below is a comparison of the improvements made during the development cycle.</p>
-                    <img src="Poker_improve.png" alt="Improvement Comparison" class="full-width-img">
+                    <h2>02. Visual Assets & Texture Details</h2>
+                    <p>To simulate the texture of "Xuan paper," I developed custom brush assets that respond dynamically to mouse velocity and pressure. These details allow for a multi-layered, atmospheric composition.</p>
+                    <img src="ink_details.png" alt="Generative Details Showcase" class="full-width-img">
                 </section>
 
                 <section>
-                    <h2>05. Gameplay Demonstrations</h2>
-                    <p>Final demonstrations of the two core gameplay outcomes: successfully matching all cards within the time limit and failing to do so.</p>
-                    
-                    <div class="video-demo-grid">
-                        <div>
-                            <div class="video-box">
-                                <iframe src="https://www.youtube.com/embed/MmHWtRVzwws" allowfullscreen></iframe>
-                            </div>
-                            <div class="video-label">Game Outcome: Win</div>
-                        </div>
-                        <div>
-                            <div class="video-box">
-                                <iframe src="https://www.youtube.com/embed/E2Kfq2Ra4L8" allowfullscreen></iframe>
-                            </div>
-                            <div class="video-label">Game Outcome: Lose</div>
-                        </div>
+                    <h2>03. Video Demonstration</h2>
+                    <p>Watch the real-time interaction in action. The video demonstrates how users can create their own landscape through fluid gestures and how the generative ink reacts to the digital canvas.</p>
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/MFdfuZXAFOk" allowfullscreen></iframe>
                     </div>
                 </section>
             </div>
 
             <aside class="sidebar">
                 <div class="sidebar-box">
-                    <h3>Role</h3><p>UX Designer & Developer</p>
-                    <h3>Timeline</h3><p>4 Months</p>
-                    <h3>Tools</h3><p>Processing (Java)<br>Figma<br>UX Research</p>
-                    <h3>Category</h3><p>Creative Coding</p>
+                    <h3>Role</h3><p>Creative Coder / Researcher</p>
+                    <h3>Timeline</h3><p>3 Weeks</p>
+                    <h3>Tools</h3><p>p5.js (JavaScript)<br>Generative Design<br>Digital Asset Creation</p>
+                    <h3>Project Resources</h3>
+                    <p>
+                        <a href="https://github.com/davehyq/Chinese-ink-paint_creative-coding" target="_blank" class="source-link">View Source Code</a>
+                    </p>
                 </div>
             </aside>
         </div>

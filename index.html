@@ -42,7 +42,7 @@
 
         header { padding: 160px 5% 100px; max-width: 900px; margin: 0 auto; }
         header h1 { 
-            font-size: 3.5rem; font-weight: 800; letter-spacing: -2px; margin-bottom: 24px; line-height: 1;
+            font-size: 3.5rem; font-weight: 800; letter-spacing: -2px; margin-bottom: 24px; line-height: 1.1;
             background: linear-gradient(to right, #111, var(--accent));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -94,7 +94,8 @@
 
         @media (max-width: 768px) { 
             header h1 { font-size: 2.5rem; }
-            .work-grid { grid-template-columns: 1fr; } 
+            .work-grid { grid-template-columns: 1fr; }
+            .info-section { grid-template-columns: 1fr; gap: 40px; }
         }
     </style>
 </head>
@@ -147,23 +148,32 @@
 
     <div class="category-label">Creative Coding</div>
     <section class="work-grid">
+        <a href="chinese_ink.html" class="card">
+            <div class="img-wrap"><img src="ink_main1.png" alt="Chinese Ink Interaction"></div>
+            <span class="tag">Processing • Java • Generative Art</span>
+            <h3>Chinese Ink Interaction</h3>
+            <p class="project-note">Digitalizing Shan-shui aesthetics via generative algorithms and fluid particle systems.</p>
+        </a>
+
+        <a href="poker.html" class="card">
+            <div class="img-wrap"><img src="poker_main1.png" alt="Poker Memory Game"></div>
+            <span class="tag">Processing • Java • UX Logic</span>
+            <h3>Poker Memory Game</h3>
+            <p class="project-note">A cognitive micro-break tool designed to refresh focus through interactive card matching.</p>
+        </a>
+
         <a href="handcoding.html" class="card">
             <div class="img-wrap"><img src="hand4.png" alt="Hand Heart Game"></div>
             <span class="tag">p5.js • ml5.js • HandPose</span>
             <h3>Interactive Hand Heart Game</h3>
             <p class="project-note">A two-player experience exploring emotional connection through computer vision.</p>
         </a>
+
         <a href="burger.html" class="card">
             <div class="img-wrap"><img src="burger1.png" alt="Burger & Fries Generator"></div>
             <span class="tag">p5.js • OOP • Interaction</span>
             <h3>Burger & Fries Generator</h3>
             <p class="project-note">A playful interactive experiment exploring generative food design and OOP logic.</p>
-        </a>
-        <a href="poker.html" class="card">
-            <div class="img-wrap"><img src="Poker_Main.png" alt="Poker Memory Game"></div>
-            <span class="tag">Processing • UX Research • Java</span>
-            <h3>Poker Memory Game</h3>
-            <p class="project-note">A cognitive micro-break tool designed to refresh focus through interactive card matching.</p>
         </a>
     </section>
 
@@ -171,12 +181,12 @@
         <div>
             <h2>Education</h2>
             <div class="info-item"><strong>New York University</strong><span>MS in Integrated Design & Media</span></div>
-            <div class="info-item"><strong>University of Toronto</strong><span>Master of Education</span></div>
+            <div class="info-item"><strong>University of Toronto</strong><span>Master of Education (Education Technology focus)</span></div>
             <div class="info-item"><strong>University of Waterloo</strong><span>GBDA (UX & Creative Coding focus)</span></div>
         </div>
         <div>
             <h2>Professional</h2>
-            <div class="info-item"><strong>NYU VIP Team</strong><span>XR Developer</span></div>
+            <div class="info-item"><strong>NYU VIP Team</strong><span>AR Developer</span></div>
             <div class="info-item"><strong>Revela, Inc.</strong><span>UX Designer</span></div>
             <div class="info-item"><strong>TJ Auto</strong><span>UX Designer</span></div>
         </div>

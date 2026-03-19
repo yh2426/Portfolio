@@ -20,7 +20,7 @@
         .main-grid { display: grid; grid-template-columns: 2fr 1fr; gap: 60px; }
         section { margin-bottom: 80px; }
         h2 { font-size: 0.8rem; font-weight: 800; margin-bottom: 25px; color: var(--accent); text-transform: uppercase; letter-spacing: 2px; }
-        p { font-size: 0.95rem; color: #444; margin-bottom: 20px; }
+        p { font-size: 0.95rem; color: #444; margin-bottom: 20px; text-align: justify; }
         
         .full-width-img { width: 100%; border-radius: 4px; border: 1px solid var(--border); margin: 20px 0; }
         .grid-img { width: 100%; border-radius: 4px; border: 1px solid var(--border); }
@@ -34,6 +34,15 @@
         .sidebar-box { background: var(--gray); padding: 30px; border-radius: 12px; border: 1px solid var(--border); position: sticky; top: 100px; }
         .sidebar-box h3 { font-size: 0.65rem; text-transform: uppercase; color: var(--sub); margin-bottom: 10px; }
         .sidebar-box p { font-weight: 600; font-size: 0.85rem; margin-bottom: 25px; }
+
+        /* GitHub 按钮样式 */
+        .source-link { 
+            display: inline-block; margin-top: 10px; padding: 12px 20px; 
+            background: #111; color: #fff; text-decoration: none; border-radius: 6px; 
+            font-size: 0.7rem; font-weight: 800; text-transform: uppercase; letter-spacing: 1px;
+            transition: all 0.3s ease;
+        }
+        .source-link:hover { background: var(--accent); transform: translateY(-2px); }
 
         @media (max-width: 768px) { .main-grid { grid-template-columns: 1fr; } .process-gallery, .video-demo-grid { grid-template-columns: 1fr; } }
     </style>
@@ -54,18 +63,19 @@
             <div class="content">
                 <section>
                     <h2>01. UX Research & Personas</h2>
-                    <p>My research focused on three core employee groups: the Efficiency Seeker, the Overwhelmed Employee, and the Growth-Minded Individual. The goal was to understand how a simple game could alleviate work stress and provide a brief cognitive "reset" during intense working hours.</p>
+                    <p>The project started with a core question: How can we help employees recover focus during high-pressure workdays? My research identified three key personas: the <strong>Efficiency Seeker</strong> (needs a quick reset), the <strong>Overwhelmed Employee</strong> (needs a stress reliever), and the <strong>Growth-Minded Individual</strong> (seeks cognitive challenges).</p>
+                    <p>This study led to the "Micro-break" concept—a 30-second gaming interval designed to engage short-term memory and provide a sensory shift away from work tasks.</p>
                 </section>
 
                 <section>
                     <h2>02. Interaction Design & Flow</h2>
-                    <p>I mapped out the Game Flow to ensure the transitions between the Start Menu, Gameplay, and End results were intuitive and minimized cognitive load.</p>
+                    <p>I mapped out the Game Flow to ensure a friction-less experience. By analyzing the user journey from the Start Menu to the high-stakes match detection, I reduced cognitive load by simplifying transitions and providing immediate visual feedback for every user action.</p>
                     <img src="Poker_gameflow.png" alt="Poker Game Flow" class="full-width-img">
                 </section>
 
                 <section>
                     <h2>03. Technical Development</h2>
-                    <p>Built using <strong>Processing (Java)</strong>, the project involved complex state management and array logic to handle card flipping and match detection.</p>
+                    <p>Built using <strong>Processing (Java)</strong>, the project required robust state management. I developed a custom card object system and utilized array-based logic to handle shuffling, flipping animations, and time-sensitive match detection.</p>
                     <div class="process-gallery">
                         <img src="Poker_code1.png" alt="Coding Part 1" class="grid-img">
                         <img src="Poker_code2.png" alt="Coding Part 2" class="grid-img">
@@ -74,26 +84,26 @@
 
                 <section>
                     <h2>04. Iteration & Improvement</h2>
-                    <p>Based on user feedback, I refined the visual hierarchy and feedback mechanisms. Below is a comparison of the improvements made during the development cycle.</p>
+                    <p>User testing revealed that users needed stronger visual cues for successful matches. I refined the visual hierarchy, added highlight effects for matched pairs, and optimized the UI for better legibility under fast-paced gameplay.</p>
                     <img src="Poker_improve.png" alt="Improvement Comparison" class="full-width-img">
                 </section>
 
                 <section>
                     <h2>05. Gameplay Demonstrations</h2>
-                    <p>Final demonstrations of the two core gameplay outcomes: successfully matching all cards within the time limit and failing to do so.</p>
+                    <p>These demonstrations showcase the final product's two primary outcomes: maintaining focus to win within the time limit, and the consequences of the countdown reaching zero.</p>
                     
                     <div class="video-demo-grid">
                         <div>
                             <div class="video-box">
                                 <iframe src="https://www.youtube.com/embed/MmHWtRVzwws" allowfullscreen></iframe>
                             </div>
-                            <div class="video-label">Game Outcome: Win</div>
+                            <div class="video-label">Outcome: Victory Condition</div>
                         </div>
                         <div>
                             <div class="video-box">
                                 <iframe src="https://www.youtube.com/embed/E2Kfq2Ra4L8" allowfullscreen></iframe>
                             </div>
-                            <div class="video-label">Game Outcome: Lose</div>
+                            <div class="video-label">Outcome: Time-Out Failure</div>
                         </div>
                     </div>
                 </section>
@@ -103,8 +113,12 @@
                 <div class="sidebar-box">
                     <h3>Role</h3><p>UX Designer & Developer</p>
                     <h3>Timeline</h3><p>4 Months</p>
-                    <h3>Tools</h3><p>Processing (Java)<br>Figma<br>UX Research</p>
-                    <h3>Category</h3><p>Creative Coding</p>
+                    <h3>Tools</h3><p>Processing (Java)<br>Figma<br>User Research</p>
+                    <h3>Category</h3><p>Creative Coding / UX</p>
+                    <h3>Project Resources</h3>
+                    <p>
+                        <a href="https://github.com/davehyq/Matching-Game/tree/main/poker_memory_card_final" target="_blank" class="source-link">View Source Code</a>
+                    </p>
                 </div>
             </aside>
         </div>
