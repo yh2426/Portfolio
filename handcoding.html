@@ -26,6 +26,7 @@
         .grid-img { width: 100%; border-radius: 4px; border: 1px solid var(--border); }
         .process-gallery { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; margin: 30px 0; }
 
+        /* 视频容器：确保 16:9 比例且能正常加载 */
         .video-container { width: 100%; position: relative; padding-bottom: 56.25%; height: 0; border-radius: 8px; overflow: hidden; background: #000; margin: 30px 0; }
         .video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
 
@@ -33,7 +34,6 @@
         .sidebar-box h3 { font-size: 0.65rem; text-transform: uppercase; color: var(--sub); margin-bottom: 10px; }
         .sidebar-box p { font-weight: 600; font-size: 0.85rem; margin-bottom: 25px; }
         
-        /* GitHub 按钮 */
         .source-link { 
             display: inline-block; margin-top: 10px; padding: 12px 20px; 
             background: #111; color: #fff; text-decoration: none; border-radius: 6px; 
@@ -83,7 +83,12 @@
                     <h2>04. Video Demonstration</h2>
                     <p>Watch how the system tracks multiple hands simultaneously and provides real-time feedback. The interaction requires coordination and collaboration, turning a camera feed into a playful shared space.</p>
                     <div class="video-container">
-                        <iframe src="https://youtu.be/lDH4DXnp0fk" allowfullscreen></iframe>
+                        <iframe 
+                            src="https://www.youtube.com/embed/lDH4DXnp0fk?si=Pdv3UNsygoFWTpBX" 
+                            title="Hand Heart Game Demo"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen>
+                        </iframe>
                     </div>
                 </section>
             </div>
