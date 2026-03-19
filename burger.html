@@ -26,7 +26,6 @@
         h1 { font-size: 2.2rem; font-weight: 800; letter-spacing: -1.5px; margin-bottom: 10px; line-height: 1.1; }
         .tagline { font-size: 1rem; color: var(--sub); margin-bottom: 50px; }
 
-        /* 视频容器：16:9 比例 */
         .hero-media { 
             width: 100%; position: relative; padding-bottom: 56.25%; height: 0;
             border-radius: 4px; overflow: hidden; margin-bottom: 60px; 
@@ -38,12 +37,6 @@
         section { margin-bottom: 60px; }
         h2 { font-size: 0.8rem; font-weight: 800; margin-bottom: 25px; color: var(--accent); text-transform: uppercase; letter-spacing: 2px; }
         p { font-size: 0.95rem; color: #444; margin-bottom: 20px; text-align: justify; }
-
-        pre { 
-            background: var(--code-bg); color: #d4d4d4; padding: 20px; 
-            border-radius: 4px; font-family: 'Fira Code', monospace; font-size: 0.8rem; 
-            overflow-x: auto; border: 1px solid #333; margin: 20px 0;
-        }
 
         .process-gallery { 
             display: grid; 
@@ -87,7 +80,7 @@
 
     <div class="container">
         <h1>Burger & Fries Generator</h1>
-        <p class="tagline">An interactive experience built with p5.js, exploring the intersection of code and my favorite comfort food.</p>
+        <p class="tagline">An interactive experience built with p5.js, exploring the intersection of creative code and my favorite comfort food.</p>
 
         <div class="hero-media">
             <iframe 
@@ -102,22 +95,14 @@
             <div class="content">
                 <section>
                     <h2>01. Concept & Inspiration</h2>
-                    <p>I designed this Burger and Fries Generator because they are my favorite foods. Beyond coding, this project connects to a personal dream I’ve held for a long time: <strong>opening my own fast food restaurant someday</strong>.</p>
-                    <p>The goal was to create a satisfying, randomized experience where users can "build" their own plate using simple keyboard commands.</p>
+                    <p>I designed this Burger and Fries Generator because they are my favorite foods. This project connects to a personal dream I’ve held for a long time: <strong>opening my own fast food restaurant someday</strong>.</p>
+                    <p>The goal was to create a satisfying, randomized experience where users can "build" their own plate using simple keyboard commands. Each visual element—from the sesame seeds on the bun to the melting cheese—reflects my vision for the perfect meal.</p>
                 </section>
 
                 <section>
-                    <h2>02. Technical Implementation</h2>
-                    <p>I used <strong>Object-Oriented Programming (OOP)</strong> to create dynamic <code>Burger</code> and <code>Fries</code> classes. Each burger type (Classic, Veggie, Double) features a unique combination of layers like lettuce, tomato, cheese, and patties.</p>
-                    
-                    <pre><code>// Dynamic Burger Layer Logic
-if (type === "classic") {
-  this.layers = ["lettuce", "cheese", "patty"];
-} else if (type === "veggie") {
-  this.layers = ["lettuce", "tomato", "cheese", "tomato"];
-} else if (type === "double") {
-  this.layers = ["cheese", "patty", "cheese", "patty"];
-}</code></pre>
+                    <h2>02. Visual Design & Coding</h2>
+                    <p>Every component of the burger and fries was <strong>individually hand-drawn and defined through code</strong>. Instead of using external assets, I programmed the shapes, layers, and color palettes to create a unique aesthetic for each meal type.</p>
+                    <p>By defining specific "recipes" (Classic, Veggie, and Double), I ensured that even within a randomized system, each generated burger maintains a distinct and appetizing character.</p>
                 </section>
 
                 <div class="process-gallery">
@@ -131,10 +116,10 @@ if (type === "classic") {
 
                 <section>
                     <h2>03. Interaction Guide</h2>
-                    <p>The interaction is driven by the <code>keyPressed()</code> function:</p>
+                    <p>The interaction is simple and playful, allowing users to populate their "plate" with different food combinations:</p>
                     <ul>
                         <li><strong>C, V, D</strong>: Adds a Classic, Veggie, or Double burger with random size and position.</li>
-                        <li><strong>F</strong>: Adds a cluster of 10 randomly placed and rotated fries.</li>
+                        <li><strong>F</strong>: Adds a cluster of 10 crisp, randomly placed fries.</li>
                     </ul>
                 </section>
             </div>
@@ -142,7 +127,7 @@ if (type === "classic") {
             <aside class="sidebar">
                 <div class="sidebar-box">
                     <h3>Technologies</h3>
-                    <p>p5.js<br>JavaScript (OOP)<br>Canvas Rendering</p>
+                    <p>p5.js<br>JavaScript<br>Canvas Drawing</p>
                     
                     <h3>Controls</h3>
                     <p>C: Classic Burger<br>V: Veggie Burger<br>D: Double Burger<br>F: Add Fries</p>
