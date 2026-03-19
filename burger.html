@@ -26,7 +26,6 @@
         h1 { font-size: 2.2rem; font-weight: 800; letter-spacing: -1.5px; margin-bottom: 10px; line-height: 1.1; }
         .tagline { font-size: 1rem; color: var(--sub); margin-bottom: 50px; }
 
-        /* 视频容器：16:9 比例 */
         .hero-media { 
             width: 100%; position: relative; padding-bottom: 56.25%; height: 0;
             border-radius: 4px; overflow: hidden; margin-bottom: 60px; 
@@ -39,14 +38,12 @@
         h2 { font-size: 0.8rem; font-weight: 800; margin-bottom: 25px; color: var(--accent); text-transform: uppercase; letter-spacing: 2px; }
         p { font-size: 0.95rem; color: #444; margin-bottom: 20px; text-align: justify; }
 
-        /* 代码展示样式 */
         pre { 
             background: var(--code-bg); color: #d4d4d4; padding: 20px; 
             border-radius: 4px; font-family: 'Fira Code', monospace; font-size: 0.8rem; 
             overflow-x: auto; border: 1px solid #333; margin: 20px 0;
         }
 
-        /* 图片画廊：修正放大问题 */
         .process-gallery { 
             display: grid; 
             grid-template-columns: repeat(2, 1fr); 
@@ -65,10 +62,18 @@
         }
         .process-img { max-width: 100%; height: auto; display: block; }
 
-        /* 侧边栏卡片 */
         .sidebar-box { background: var(--gray); padding: 30px; border-radius: 12px; border: 1px solid var(--border); position: sticky; top: 100px; }
         .sidebar-box h3 { font-size: 0.65rem; text-transform: uppercase; color: var(--sub); margin-bottom: 10px; letter-spacing: 1.5px; }
         .sidebar-box p { font-weight: 600; font-size: 0.85rem; margin-bottom: 25px; color: var(--text); }
+
+        /* GitHub 链接按钮样式 */
+        .source-link { 
+            display: inline-block; margin-top: 10px; padding: 12px 20px; 
+            background: #111; color: #fff; text-decoration: none; border-radius: 6px; 
+            font-size: 0.7rem; font-weight: 800; text-transform: uppercase; letter-spacing: 1px;
+            transition: all 0.3s ease;
+        }
+        .source-link:hover { background: var(--accent); transform: translateY(-2px); }
 
         @media (max-width: 768px) { .main-grid { grid-template-columns: 1fr; } .process-gallery { grid-template-columns: 1fr; } }
     </style>
@@ -144,6 +149,11 @@ if (type === "classic") {
 
                     <h3>Category</h3>
                     <p>Creative Coding</p>
+
+                    <h3>Project Resources</h3>
+                    <p>
+                        <a href="https://github.com/yh2426/creative-coding-2025/tree/main/assignment4" target="_blank" class="source-link">View Source Code</a>
+                    </p>
                 </div>
             </aside>
         </div>
