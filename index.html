@@ -27,75 +27,80 @@
         }
 
         nav { 
-            padding: 1.5rem 5%; 
+            padding: 1rem 5%; 
             display: flex; justify-content: space-between; align-items: center; 
             position: sticky; top: 0; background: rgba(255,255,255,0.85); 
             backdrop-filter: blur(20px); z-index: 100;
             border-bottom: 1px solid var(--border);
         }
         .nav-brand { font-weight: 900; letter-spacing: 2px; font-size: 0.85rem; text-decoration: none; color: var(--text); }
-        .nav-links { display: flex; gap: 30px; }
+        .nav-links { display: flex; gap: 20px; }
         .nav-links a { 
             text-decoration: none; color: var(--text); font-weight: 700; 
             font-size: 0.65rem; text-transform: uppercase; letter-spacing: 1.5px;
         }
 
-        header { padding: 160px 5% 100px; max-width: 900px; margin: 0 auto; }
+        header { padding: 70px 5% 40px; max-width: 900px; margin: 0 auto; }
         header h1 { 
-            font-size: 3.5rem; font-weight: 800; letter-spacing: -2px; margin-bottom: 24px; line-height: 1.1;
+            font-size: 2.5rem; font-weight: 800; letter-spacing: -1.5px; margin-bottom: 16px; line-height: 1.1;
             background: linear-gradient(to right, #111, var(--accent));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
-        header p { font-size: 1rem; color: var(--sub); line-height: 1.6; max-width: 550px; }
+        header p { font-size: 0.95rem; color: var(--sub); line-height: 1.5; max-width: 500px; }
 
         .category-label { 
             display: flex; align-items: center; justify-content: center; 
-            gap: 20px; font-size: 0.65rem; text-transform: uppercase; 
-            letter-spacing: 4px; 
+            gap: 15px; font-size: 0.65rem; text-transform: uppercase; 
+            letter-spacing: 3px; 
             color: #555555; 
-            margin: 100px 0 50px; font-weight: 800; 
+            margin: 40px 0 25px; font-weight: 800; 
         }
         .category-label::before, .category-label::after {
-            content: ""; flex: 0 1 60px; height: 1.5px; 
+            content: ""; flex: 0 1 40px; height: 1.5px; 
             background-color: #eeeeee;
         }
 
         .work-grid { 
-            display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
-            gap: 60px 30px; max-width: 1000px; margin: 0 auto; padding: 0 5% 100px; 
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+            gap: 30px 20px; max-width: 1000px; margin: 0 auto; padding: 0 5% 50px; 
         }
         
         .card { text-decoration: none; color: inherit; display: block; }
 
         .img-wrap { 
-            width: 100%; aspect-ratio: 1.5 / 1; overflow: hidden; border-radius: 4px; 
-            background: #f9f9fb; border: 1px solid var(--border); margin-bottom: 20px;
-            transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+            width: 100%; aspect-ratio: 1.5 / 1; overflow: hidden; border-radius: 6px; 
+            background: #f8f9fa; border: 1px solid var(--border); margin-bottom: 12px;
+            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
         }
-        .card:hover .img-wrap { transform: translateY(-8px); }
+        .card:hover .img-wrap { transform: translateY(-4px); }
+        
+        /* 🔧 核心修复：把 cover 改为 contain，防止竖屏图被放大裁剪 */
         .card img { 
-            width: 100%; height: 100%; object-fit: cover; 
-            transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+            width: 100%; height: 100%; 
+            object-fit: contain; 
+            padding: 8px;
+            transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
         }
-        .card:hover img { transform: scale(1.05); }
+        .card:hover img { transform: scale(1.03); }
 
-        .tag { color: var(--accent); font-weight: 800; font-size: 0.55rem; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 8px; display: block; }
-        h3 { margin: 0; font-size: 1.1rem; font-weight: 800; letter-spacing: -0.2px; }
-        .project-note { font-size: 0.85rem; color: #666; margin-top: 8px; line-height: 1.5; }
+        .tag { color: var(--accent); font-weight: 800; font-size: 0.55rem; text-transform: uppercase; letter-spacing: 1.2px; margin-bottom: 6px; display: block; }
+        h3 { margin: 0; font-size: 1rem; font-weight: 800; letter-spacing: -0.2px; }
+        .project-note { font-size: 0.8rem; color: #666; margin-top: 6px; line-height: 1.4; }
 
         .info-section { 
-            max-width: 900px; margin: 0 auto; padding: 100px 5%; 
-            border-top: 1px solid var(--border); display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 60px;
+            max-width: 900px; margin: 0 auto; padding: 50px 5%; 
+            border-top: 1px solid var(--border); display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 40px;
         }
-        h2 { font-weight: 800; margin-bottom: 35px; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 2px; color: #555555; }
-        .info-item { margin-bottom: 25px; font-size: 0.85rem; }
-        .info-item strong { display: block; font-weight: 800; font-size: 0.95rem; margin-bottom: 2px; }
+        h2 { font-weight: 800; margin-bottom: 20px; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 2px; color: #555555; }
+        .info-item { margin-bottom: 18px; font-size: 0.85rem; }
+        .info-item strong { display: block; font-weight: 800; font-size: 0.9rem; margin-bottom: 2px; }
 
         @media (max-width: 768px) { 
-            header h1 { font-size: 2.5rem; }
-            .work-grid { grid-template-columns: 1fr; }
-            .info-section { grid-template-columns: 1fr; gap: 40px; }
+            header { padding: 40px 5% 20px; }
+            header h1 { font-size: 2rem; }
+            .work-grid { grid-template-columns: 1fr; gap: 25px; }
+            .info-section { grid-template-columns: 1fr; gap: 30px; }
         }
     </style>
 </head>
@@ -137,8 +142,22 @@
         </a>
     </section>
 
-    <div class="category-label">UX Research & Strategy</div>
+    <div class="category-label">UX Design & Research</div>
     <section class="work-grid">
+        <a href="soulgarden.html" class="card">
+            <div class="img-wrap"><img src="soulgarden_main.png" alt="Soul Garden"></div>
+            <span class="tag">UX/UI • Mobile App • Digital Memorial</span>
+            <h3>Soul Garden</h3>
+            <p class="project-note">Honouring loved ones in a world with limited cemetery space through interactive digital memorials.</p>
+        </a>
+
+        <a href="hive.html" class="card">
+            <div class="img-wrap"><img src="hive_main1.png" alt="H!VE App"></div>
+            <span class="tag">UX/UI • Mobile App • Workplace Well-being</span>
+            <h3>H!VE</h3>
+            <p class="project-note">Empowering "996" office workers to de-stress during working hours through small, sustainable micro-habits.</p>
+        </a>
+
         <a href="revela.html" class="card">
             <div class="img-wrap"><img src="revelaf.png" alt="Revela AI"></div>
             <span class="tag">AI • Mobile UX</span>
