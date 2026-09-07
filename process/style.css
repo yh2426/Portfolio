@@ -35,6 +35,18 @@ header.site-head {
   padding: 56px 0 28px;
 }
 
+.back-link {
+  display: inline-block;
+  margin-top: 24px;
+  font-size: 12px;
+  color: var(--ink-soft);
+  text-decoration: none;
+}
+
+.back-link:hover {
+  color: var(--accent);
+}
+
 header.site-head .kicker {
   font-size: 12px;
   letter-spacing: 0.12em;

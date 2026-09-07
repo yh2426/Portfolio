@@ -24,9 +24,9 @@
 window.entries = [
   {
     date: "2026-09-06",
-    title: "Starting the process log",
+    title: "Set up this page",
     tags: ["setup"],
-    body: "First entry — this log is where the messy, in-between stuff lives: post-its, sketchbook pages, half-working prototypes, dead ends. Not a highlight reel, just what actually happened.",
+    body: "Starting this for TETL. Plan is to post sketches, notes, and prototypes here weekly.",
     media: []
   },
 ];
