@@ -22,11 +22,16 @@
 // ============================================================
 
 window.entries = [
-  {
-    date: "2026-09-06",
-    title: "Set up this page",
-    tags: ["setup"],
-    body: "Starting this for TETL. Plan is to post sketches, notes, and prototypes here weekly.",
-    media: []
-  },
+  { date: "2026-09-07", title: "Week 1", tags: [], body: "", media: [] },
+  { date: "2026-09-14", title: "Week 2", tags: [], body: "", media: [] },
+  { date: "2026-09-21", title: "Week 3", tags: [], body: "", media: [] },
+  { date: "2026-09-28", title: "Week 4", tags: [], body: "", media: [] },
+  { date: "2026-10-05", title: "Week 5", tags: [], body: "", media: [] },
+  { date: "2026-10-12", title: "Week 6", tags: [], body: "", media: [] },
+  { date: "2026-10-19", title: "Week 7", tags: [], body: "", media: [] },
+  { date: "2026-10-26", title: "Week 8", tags: [], body: "", media: [] },
+  { date: "2026-11-02", title: "Week 9", tags: [], body: "", media: [] },
+  { date: "2026-11-09", title: "Week 10", tags: [], body: "", media: [] },
+  { date: "2026-11-16", title: "Week 11", tags: [], body: "", media: [] },
+  { date: "2026-11-23", title: "Week 12", tags: [], body: "", media: [] },
 ];

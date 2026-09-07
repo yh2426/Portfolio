@@ -73,13 +73,11 @@ function render() {
 
   timeline.innerHTML = list.map(e => `
     <div class="entry">
-      <div class="date">${formatDate(e.date)}<span class="dot"></span></div>
-      <div class="card">
-        <h2>${escapeHtml(e.title || '')}</h2>
-        ${(e.tags && e.tags.length) ? `<div class="tags">${e.tags.map(t => `<span class="tag">${escapeHtml(t)}</span>`).join('')}</div>` : ''}
-        <div class="body">${renderBody(e.body || '')}</div>
-        ${(e.media && e.media.length) ? `<div class="media">${e.media.map(renderMediaItem).join('')}</div>` : ''}
-      </div>
+      <div class="date">${formatDate(e.date)}</div>
+      <h2>${escapeHtml(e.title || '')}</h2>
+      ${(e.tags && e.tags.length) ? `<div class="tags">${e.tags.map(t => `<span class="tag">${escapeHtml(t)}</span>`).join('')}</div>` : ''}
+      ${(e.body && e.body.trim()) ? `<div class="body">${renderBody(e.body)}</div>` : ''}
+      ${(e.media && e.media.length) ? `<div class="media">${e.media.map(renderMediaItem).join('')}</div>` : ''}
     </div>
   `).join('');
 }
