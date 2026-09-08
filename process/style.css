@@ -69,11 +69,11 @@ header.site-head p.tagline {
 
 .week-header {
   text-align: center;
-  font-size: 12px;
-  font-weight: 700;
+  font-size: 14px;
+  font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  color: var(--sub);
+  color: var(--text);
   margin: 48px 0 8px;
 }
 
@@ -123,6 +123,14 @@ header.site-head p.tagline {
 }
 
 .body p:last-child { margin-bottom: 0; }
+
+.body a {
+  color: var(--text);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.body a:hover { color: var(--sub); }
 
 .media {
   display: flex;
