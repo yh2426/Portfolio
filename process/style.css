@@ -67,6 +67,20 @@ header.site-head p.tagline {
   margin-top: 0;
 }
 
+.week-header {
+  text-align: center;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--sub);
+  margin: 48px 0 8px;
+}
+
+.week-header:first-child {
+  margin-top: 0;
+}
+
 .entry {
   padding: 28px 0;
   border-bottom: 1px solid var(--border);
