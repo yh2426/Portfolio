@@ -35,9 +35,10 @@ function escapeHtml(str) {
 }
 
 function renderBody(text) {
+  // supports **bold** inside paragraphs
   return text
     .split(/\n\s*\n/)
-    .map(p => `<p>${escapeHtml(p.trim())}</p>`)
+    .map(p => `<p>${escapeHtml(p.trim()).replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')}</p>`)
     .join('');
 }
 
