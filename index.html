@@ -5,32 +5,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Yinqi Huang | Spatial Interaction Designer</title>
     <style>
-        :root {
-            --bg: #ffffff;
-            --text: #111111;
+        :root { 
+            --bg: #ffffff; 
+            --text: #111111; 
             --sub: #6b6b6b;
             --border: #e8e8e8;
         }
 
         * { box-sizing: border-box; }
-        body {
+        body { 
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
-            margin: 0; background: var(--bg); color: var(--text);
+            margin: 0; background: var(--bg); color: var(--text); 
             -webkit-font-smoothing: antialiased;
             line-height: 1.5;
         }
         a { color: inherit; }
 
-        nav {
+        nav { 
             padding: 1.1rem 5%;
-            display: flex; justify-content: space-between; align-items: center;
+            display: flex; justify-content: space-between; align-items: center; 
             position: sticky; top: 0; background: rgba(255,255,255,0.92);
             backdrop-filter: blur(16px); z-index: 100;
             border-bottom: 1px solid var(--border);
         }
         .nav-brand { font-weight: 700; letter-spacing: 0.06em; font-size: 0.8rem; text-decoration: none; color: var(--text); }
         .nav-links { display: flex; gap: 24px; }
-        .nav-links a {
+        .nav-links a { 
             text-decoration: none; color: var(--sub); font-weight: 600;
             font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.08em;
             padding-bottom: 2px;
@@ -38,7 +38,7 @@
         .nav-links a.active { color: var(--text); border-bottom: 1px solid var(--text); }
 
         header { padding: 64px 5% 8px; max-width: 760px; margin: 0 auto; }
-        header h1 {
+        header h1 { 
             font-size: 2.1rem; font-weight: 700; letter-spacing: -0.02em; margin: 0 0 16px; line-height: 1.25;
             color: var(--text);
         }
@@ -46,27 +46,27 @@
 
         .section { max-width: 1000px; margin: 0 auto; padding: 0 5%; }
 
-        .category-label {
+        .category-label { 
             font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.1em;
             color: var(--sub); font-weight: 700;
             margin: 56px 0 24px; padding-top: 32px; border-top: 1px solid var(--border);
         }
         .category-label.first { margin-top: 40px; padding-top: 0; border-top: none; }
 
-        .work-grid {
-            display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 36px 24px;
+        .work-grid { 
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+            gap: 30px 20px; max-width: 1000px; margin: 0 auto; padding: 0 5% 50px; 
         }
-
+        
         .card { text-decoration: none; color: inherit; display: block; }
 
-        .img-wrap {
+        .img-wrap { 
             width: 100%; aspect-ratio: 1.5 / 1; overflow: hidden; border-radius: 2px;
             background: #fafafa; border: 1px solid var(--border); margin-bottom: 14px;
             transition: border-color 0.2s ease;
         }
         .card:hover .img-wrap { border-color: #bbb; }
-
+        
         .card img { width: 100%; height: 100%; object-fit: contain; padding: 8px; }
 
         .tag { color: var(--sub); font-weight: 600; font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 6px; display: block; }
@@ -96,7 +96,7 @@
         .other-card img { width: 100%; height: 100%; object-fit: cover; display: block; }
         .other-card .other-title { font-size: 0.78rem; font-weight: 600; line-height: 1.35; color: var(--text); }
 
-        .info-section {
+        .info-section { 
             max-width: 1000px; margin: 72px auto 0; padding: 40px 5% 60px;
             border-top: 1px solid var(--border); display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 40px;
         }
@@ -105,7 +105,7 @@
         .info-item strong { display: block; font-weight: 700; font-size: 0.9rem; margin-bottom: 2px; color: var(--text); }
         .info-item span { color: var(--sub); }
 
-        @media (max-width: 768px) {
+        @media (max-width: 768px) { 
             header { padding: 40px 5% 8px; }
             header h1 { font-size: 1.7rem; }
             .work-grid { grid-template-columns: 1fr; gap: 28px; }
@@ -117,7 +117,7 @@
 </head>
 <body>
 
-    <nav>
+           <nav>
         <a href="index.html" class="nav-brand">YINQI HUANG</a>
         <div class="nav-links">
             <a href="index.html" class="active">Work</a>
@@ -134,51 +134,51 @@
     <div class="section">
 
         <div class="category-label first">Research & XR</div>
-        <section class="work-grid">
-            <a href="cladvr-details.html" class="card">
-                <div class="img-wrap"></div>
-                <span class="tag">EEG • Gaze • Adaptive XR Training</span>
-                <h3>CLAd-VR: Multimodal Sensing for Adaptive Training</h3>
-                <p class="project-note">Researching whether EEG and gaze signals can tell apart perceptual, cognitive, and motor demand across steps of a VR training task — NYU Dept. of Computer Science and Engineering.</p>
-            </a>
+    <section class="work-grid">
+        <a href="cladvr-details.html" class="card">
+            <div class="img-wrap"></div>
+            <span class="tag">EEG • Gaze • Adaptive XR Training</span>
+            <h3>CLAd-VR: Multimodal Sensing for Adaptive Training</h3>
+            <p class="project-note">Researching whether EEG and gaze signals can tell apart perceptual, cognitive, and motor demand across steps of a VR training task — NYU Dept. of Computer Science and Engineering.</p>
+        </a>
 
             <a href="immersive.html" class="card">
                 <div class="img-wrap"><img src="ux_final.png" alt="Immersive Research"></div>
                 <span class="tag">Research • Strategy</span>
                 <h3>Immersive Learning</h3>
                 <p class="project-note">Research on user engagement within virtual museum environments.</p>
-            </a>
+        </a>
 
-            <a href="vp-details.html" class="card">
-                <div class="img-wrap"><img src="vp_project.png" alt="Virtual Production"></div>
-                <span class="tag">UE5 • Motion Capture</span>
-                <h3>Virtual Production</h3>
-                <p class="project-note">High-fidelity MoCap and cinematic rendering within Unreal Engine 5.</p>
-            </a>
+        <a href="vp-details.html" class="card">
+            <div class="img-wrap"><img src="vp_project.png" alt="Virtual Production"></div>
+            <span class="tag">UE5 • Motion Capture</span>
+            <h3>Virtual Production</h3>
+            <p class="project-note">High-fidelity MoCap and cinematic rendering within Unreal Engine 5.</p>
+        </a>
 
-            <a href="moe-details.html" class="card">
-                <div class="img-wrap"><img src="moe3.png" alt="Metaverse Education"></div>
-                <span class="tag">Unity • Mixed Reality</span>
-                <h3>Metaverse for Education</h3>
-                <p class="project-note">Exploring how VR can make remote learning more engaging and interactive.</p>
-            </a>
-        </section>
+        <a href="moe-details.html" class="card">
+            <div class="img-wrap"><img src="moe3.png" alt="Metaverse Education"></div>
+            <span class="tag">Unity • Mixed Reality</span>
+            <h3>Metaverse for Education</h3>
+            <p class="project-note">Exploring how VR can make remote learning more engaging and interactive.</p>
+        </a>
+    </section>
 
-        <div class="category-label">Creative Coding</div>
-        <section class="work-grid">
-            <a href="chineseink.html" class="card">
-                <div class="img-wrap"><img src="ink_main1.png" alt="Chinese Ink Interaction"></div>
-                <span class="tag">Processing • Java • Generative Art</span>
-                <h3>Chinese Ink Interaction</h3>
-                <p class="project-note">Digitalizing Shan-shui aesthetics via generative algorithms and fluid particle systems.</p>
-            </a>
+    <div class="category-label">Creative Coding</div>
+    <section class="work-grid">
+        <a href="chineseink.html" class="card">
+            <div class="img-wrap"><img src="ink_main1.png" alt="Chinese Ink Interaction"></div>
+            <span class="tag">Processing • Java • Generative Art</span>
+            <h3>Chinese Ink Interaction</h3>
+            <p class="project-note">Digitalizing Shan-shui aesthetics via generative algorithms and fluid particle systems.</p>
+        </a>
 
-            <a href="handcoding.html" class="card">
-                <div class="img-wrap"><img src="hand4.png" alt="Hand Heart Game"></div>
-                <span class="tag">p5.js • ml5.js • HandPose</span>
-                <h3>Interactive Hand Heart Game</h3>
-                <p class="project-note">A two-player experience exploring emotional connection through computer vision.</p>
-            </a>
+        <a href="handcoding.html" class="card">
+            <div class="img-wrap"><img src="hand4.png" alt="Hand Heart Game"></div>
+            <span class="tag">p5.js • ml5.js • HandPose</span>
+            <h3>Interactive Hand Heart Game</h3>
+            <p class="project-note">A two-player experience exploring emotional connection through computer vision.</p>
+        </a>
         </section>
 
         <div class="other-work">
@@ -205,9 +205,9 @@
                     <div class="other-title">Poker Memory Game</div>
                 </a>
                 <a href="burger.html" class="other-card">
-                    <div class="img-wrap"><img src="burger1.png" alt="Burger & Fries Generator"></div>
+            <div class="img-wrap"><img src="burger1.png" alt="Burger & Fries Generator"></div>
                     <div class="other-title">Burger & Fries Generator</div>
-                </a>
+        </a>
             </div>
         </div>
 
