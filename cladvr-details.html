@@ -31,10 +31,17 @@
         .tagline { font-size: 1rem; color: var(--sub); margin-bottom: 50px; }
 
         .hero-media {
-            width: 100%; aspect-ratio: 16/9; border-radius: 4px; overflow: hidden;
+            width: 100%; border-radius: 4px; overflow: hidden;
             margin-bottom: 60px; border: 1px solid var(--border); background: #f9f9fb;
         }
-        .hero-media img { width: 100%; height: 100%; object-fit: cover; }
+        .hero-media img { width: 100%; height: auto; display: block; }
+
+        .video-embed {
+            position: relative; width: 100%; aspect-ratio: 16/9; border-radius: 4px;
+            overflow: hidden; margin-top: 25px; border: 1px solid var(--border); background: #000;
+        }
+        .video-embed iframe { width: 100%; height: 100%; border: 0; display: block; }
+        .video-caption { font-size: 0.8rem; color: var(--sub); margin-top: 10px; }
 
         .main-grid { display: grid; grid-template-columns: 2fr 1fr; gap: 60px; }
         .cs-section { margin-bottom: 60px; }
@@ -77,43 +84,53 @@
         <p class="tagline">EEG- and gaze-informed adaptive feedback for VR machining training — NYU Dept. of Computer Science and Engineering.</p>
 
         <div class="hero-media">
-            <!-- TODO: add a hero image/screenshot here, e.g. <img src="cladvr_main.png" alt="CLAd-VR"> -->
+            <img src="cladvr_pipeline.png" alt="CLAd-VR system sensing pipeline: VR environment with Varjo XR-3 and OpenBCI EEG, synced through PhysioLabXR, then windowed and grouped by Multiple Resource Theory stage">
         </div>
 
         <div class="main-grid">
             <div class="content">
                 <section class="cs-section">
                     <h2>01. Project Overview</h2>
-                    <p>Most adaptive VR training systems reduce a whole training procedure to a single "cognitive load" score. This project asks a more specific question: can physiological signals — EEG, gaze, pupil size, and blinks — tell apart the different <em>kinds</em> of demand that different steps of a hands-on task place on a learner, rather than just how demanding the task is overall? The context is CLAd-VR, an adaptive VR training system for machining skills developed at NYU. My work spans the system's user studies, the Ghost Hands training prototype, and its AI voice guidance layer.</p>
+                    <p>CLAd-VR is a team research project at NYU on whether EEG and gaze signals can tell apart different kinds of demand — visual, cognitive, physical — across the steps of a VR training task, instead of giving just one overall "how hard was this" score. It's an adaptive VR training system for machining skills. My part: running the user study sessions, and building the Ghost Hands prototype and the AI voice guidance layer.</p>
                 </section>
 
                 <section class="cs-section">
                     <h2>02. Research & Methods</h2>
-                    <p>Seven participants completed a full VR machining procedure — 31 logged sub-steps, from securing a workpiece to drilling — on a Varjo XR-3 headset fitted with a 15-channel EEG cap, while PhysioLabXR synchronized gaze, pupil, blink, and EEG streams on a shared clock. We used Multiple Resource Theory, which treats perceptual, cognitive, and motor demand as drawing on largely separate attention resources, to decide in advance which physiological feature should index which kind of demand — then let each sub-step's own recordings determine which demand was dominant.</p>
+                    <p>Seven participants went through a full VR machining task — 31 logged sub-steps, from securing a workpiece to drilling — on a Varjo XR-3 headset with a 15-channel EEG cap, while PhysioLabXR kept gaze, pupil, blink, and EEG data synced on one clock. We used Multiple Resource Theory (perceptual, cognitive, and motor demand draw on mostly separate attention resources) to decide ahead of time which signal should track which kind of demand, then checked that against what each step's own recordings actually showed. I helped run these sessions — recruiting participants, observing, and doing follow-up interviews.</p>
 
                     <div class="problem-card">
                         <span class="card-label">The Challenge</span>
-                        Most evidence linking EEG and gaze signals to cognitive load comes from seated, static lab tasks like mental arithmetic. It was unclear whether those signals behave the same way during a real, physically active, hands-on training task where the learner is constantly moving.
+                        Most evidence linking EEG and gaze to cognitive load comes from seated, static lab tasks like mental arithmetic. It wasn't clear those signals would behave the same way in a real, physically active, hands-on task where the learner keeps moving.
                     </div>
                 </section>
 
                 <section class="cs-section">
                     <h2>03. Ghost Hands & Adaptive Voice Guidance</h2>
-                    <p>Alongside the sensing study, I built Ghost Hands, a Unity/C# training prototype that overlays recorded hand demonstrations, tool interactions, and object highlights directly onto the learner's view, paired with an AI voice guidance layer — a language model selects a coaching strategy given the learner's progress, which is converted to speech and played back in real time.</p>
+                    <p>Alongside the study, I built Ghost Hands — a Unity/C# prototype that overlays recorded hand demonstrations, tool interactions, and object highlights onto what the learner sees. I paired it with an AI voice guidance layer: a language model picks a coaching strategy based on the learner's progress, turns it into speech, and plays it back in real time.</p>
 
                     <div class="solution-card">
                         <span class="card-label">The Direction</span>
                         Rather than one global difficulty setting, guidance can eventually be triggered per sub-step and informed by which kind of demand — visual, cognitive, or physical — that step places on the learner.
                     </div>
+
+                    <div class="video-embed">
+                        <iframe src="https://www.youtube.com/embed/W6sl5Jp0b7A" title="Ghost Hands and AI audio hint triggered by an error" allowfullscreen></iframe>
+                    </div>
+                    <p class="video-caption">Demo 1: an error triggers Ghost Hands and the AI audio hint.</p>
+
+                    <div class="video-embed">
+                        <iframe src="https://www.youtube.com/embed/GouMU1og3J4" title="Another error triggering Ghost Hands and the AI audio hint" allowfullscreen></iframe>
+                    </div>
+                    <p class="video-caption">Demo 2: another error triggering Ghost Hands and the AI audio hint.</p>
                 </section>
 
                 <section class="cs-section">
                     <h2>04. Findings & Next Steps</h2>
-                    <p>Across the 31 sub-steps, head and eye movement clearly separated motor-heavy sub-steps (like swinging a mallet or loosening a chuck) from visually-focused ones (like locating an edge or reading a digital display) — but no single signal cleanly separated perceptual-dominant from cognitive-dominant sub-steps. We also found that high-frequency EEG activity normally discarded as noise during cleaning tracked head movement, suggesting it isn't pure noise, but carries information about what the learner's body is doing. These findings are preliminary (n=7); the full analysis is written up in a poster submitted to ISMAR 2025 (XRSPro Adjunct). Next steps: extending the study to more participants, and using these per-sub-step demand signatures to actually drive adaptive guidance in Ghost Hands, rather than only describing them.</p>
+                    <p>Across the 31 sub-steps, head and eye movement clearly separated motor-heavy sub-steps (like swinging a mallet or loosening a chuck) from visually-focused ones (like locating an edge or reading a digital display) — but no single signal cleanly separated perceptual-dominant from cognitive-dominant sub-steps. We also found that high-frequency EEG activity normally discarded as noise during cleaning tracked head movement, suggesting it isn't pure noise, but carries information about what the learner's body is doing. These findings are preliminary (n=7); the full analysis is written up in a poster submitted to ISMAR 2026 (XRSPro Adjunct). Next steps: extending the study to more participants, and using these per-sub-step demand signatures to actually drive adaptive guidance in Ghost Hands, rather than only describing them.</p>
                 </section>
 
                 <div class="pub-note">
-                    <strong>Co-authored poster:</strong> "What Each Step Demands: A Preliminary Multimodal (EEG + Gaze) Characterization of Sub-Steps in VR Machining Training." Xichen He, Bhavya Matam, Yinqi Huang, Kachina Studer, Christian Gabbianelli, John Liu, Claudio Silva, Ziheng Li, Dishita Turakhia. Submitted to ISMAR 2025 (XRSPro Adjunct).
+                    <strong>Co-authored poster:</strong> "What Each Step Demands: A Preliminary Multimodal (EEG + Gaze) Characterization of Sub-Steps in VR Machining Training." Xichen He, Bhavya Matam, Yinqi Huang, Kachina Studer, Christian Gabbianelli, John Liu, Claudio Silva, Ziheng Li, Dishita Turakhia. Submitted to ISMAR 2026 (XRSPro Adjunct).
                 </div>
             </div>
 
@@ -131,9 +148,9 @@
 
         <div class="gallery-title">Process Documentation</div>
         <div class="gallery-grid">
-            <!-- TODO: add screenshots/diagrams here, e.g.
-            <div class="gallery-item"><img src="cladvr1.png"></div>
-            -->
+            <div class="gallery-item"><img src="cladvr_userstudy1.jpg" alt="User study session with EEG cap and VR headset" style="object-position: top;"></div>
+            <div class="gallery-item"><img src="cladvr_strategy_log.png" alt="Unity console log showing the AI system selecting a voice guidance strategy" style="object-fit: contain;"></div>
+            <div class="gallery-item"><img src="cladvr_api_log.png" alt="Guidance API server log showing requests and generated audio files" style="object-fit: contain;"></div>
         </div>
     </div>
 
