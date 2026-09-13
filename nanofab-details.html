@@ -32,10 +32,8 @@
         .hero-media {
             width: 100%; border-radius: 4px; overflow: hidden;
             margin-bottom: 60px; border: 1px solid var(--border); background: #f9f9fb;
-            aspect-ratio: 16/9; display: flex; align-items: center; justify-content: center;
         }
         .hero-media img { width: 100%; height: auto; display: block; }
-        .hero-media .placeholder-note { color: var(--sub); font-size: 0.8rem; }
 
         .main-grid { display: grid; grid-template-columns: 2fr 1fr; gap: 60px; }
         .cs-section { margin-bottom: 60px; }
@@ -70,15 +68,14 @@
         <p class="tagline">360-degree VR training modules built in Uptale — NYU Tandon Digital Learning, Nanofab VR initiative.</p>
 
         <div class="hero-media">
-            <!-- TODO: add a hero image/screenshot here, e.g. <img src="nanofab_main.png" alt="Nanofab VR training module"> -->
-            <span class="placeholder-note">Hero image pending</span>
+            <img src="nanofab_scene_fumehood.png" alt="Nanofab VR training module: 360-degree cleanroom scene with a drag-to-fume-hood interaction">
         </div>
 
         <div class="main-grid">
             <div class="content">
                 <section class="cs-section">
                     <h2>01. Project Overview</h2>
-                    <p>As a Graduate Production Assistant with NYU Tandon's Digital Learning group, I built 360-degree VR training modules in Uptale for the Nanofab VR initiative — designing the scenes, hotspots, overlays, and navigation flows that make up each module.</p>
+                    <p>As a Graduate Production Assistant with NYU Tandon's Digital Learning group, I built 360-degree VR training modules in Uptale for the Nanofab VR initiative — designing the scenes, hotspots, overlays, and navigation flows that make up each module. I also designed the project's companion website.</p>
                 </section>
 
                 <section class="cs-section">
@@ -95,15 +92,18 @@
                     <p>NYU Tandon School of Engineering — Digital Learning</p>
                     <h3>Platform</h3>
                     <p>Uptale · Meta Quest 3 · Web</p>
+                    <h3>Site</h3>
+                    <p><a href="https://sites.google.com/view/nanofab-vr-training/home" target="_blank" rel="noopener" style="color: var(--text);">Nanofab VR Training ↗</a></p>
                 </div>
             </aside>
         </div>
 
         <div class="gallery-title">Process Documentation</div>
         <div class="gallery-grid">
-            <!-- TODO: add screenshots here, e.g.
-            <div class="gallery-item"><img src="nanofab1.png"></div>
-            -->
+            <div class="gallery-item"><img src="nanofab_editor.png" alt="Uptale Experience Editor showing the module's scene list and interaction tags" style="object-fit: contain;"></div>
+            <div class="gallery-item"><img src="nanofab_scene_goggles.png" alt="360-degree scene: put the safety goggles on Einstein interaction" style="object-fit: contain;"></div>
+            <div class="gallery-item"><img src="nanofab_scene_intro.png" alt="360-degree scene: presenter introducing the cleanroom at the module entrance" style="object-fit: contain;"></div>
+            <div class="gallery-item"><img src="nanofab_scene_quiz.png" alt="360-degree scene: in-module quiz question on negative photoresists" style="object-fit: contain;"></div>
         </div>
     </div>
 
