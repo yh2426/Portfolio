@@ -43,7 +43,14 @@ window.entries = [
     body: "[Mojobot](https://www.mojobot.io/) is a screen free coding robot that lets learners use physical coding tags to control the robot and learn basic programming concepts.\n\nMojobot lets learners use physical coding tags to control the robot. I think this makes coding easier to understand because learners can directly see how changing the order of the tags can change the robot's behavior. It also gives them a chance to try different ways to solve the task and work with others.\n\nWhat stood out to me most was the physical coding tags and the robot interaction. I like that learners can actually play around with the tags and then see the robot move, which can make learning coding logic more fun. What I don't like is that learners might focus too much on the robot and not always think about the connection between the coding tags.\n\nIf I were to iterate on Mojobot, I would focus more on testing and feedback. I would see where different learners get confused when using the coding tags, then keep improving the design based on what I find instead of assuming the same interaction works for everyone.\n\nOne limitation I see is that the number of physical coding tags is fixed. Even though learners can make many different combinations, I think it might feel less interesting after they become familiar with all the tags and missions.",
     media: []
   },
-  { date: "2026-09-14", title: "Week 2", tags: [], body: "", media: [] },
+  {
+    date: "2026-09-14",
+    week: 2,
+    title: "Topic Reflection",
+    tags: ["reading", "reflection"],
+    body: "**Takeaway:** In the paper Understanding the Problem: Design Research, one idea that stood out to me was that designers should focus on understanding users' goals before focusing on their tasks. I think this is useful because what users are doing right now may not always represent what they actually want to achieve, and this could affect the research results.\n\n**Connection:** This reminds me of one of my user study projects. During the design process, I focused a lot on whether users could complete each step correctly. After user testing, I found that even when users finished all the steps, some of them were still confused about how they completed the task. This made me realize that completing the task does not always mean the user has actually achieved their goal.\n\n**Question:** In the paper, the authors suggest observing users in their real environment. How can designers tell whether users are behaving naturally or changing their behavior because they know they are being observed?",
+    media: []
+  },
   { date: "2026-09-21", title: "Week 3", tags: [], body: "", media: [] },
   { date: "2026-09-28", title: "Week 4", tags: [], body: "", media: [] },
   { date: "2026-10-05", title: "Week 5", tags: [], body: "", media: [] },
