@@ -51,7 +51,14 @@ window.entries = [
     body: "**Takeaway:** In the paper Understanding the Problem: Design Research, one idea that stood out to me was that designers should focus on understanding users' goals before focusing on their tasks. I think this is useful because what users are doing right now may not always represent what they actually want to achieve, and this could affect the research results.\n\n**Connection:** This reminds me of one of my user study projects. During the design process, I focused a lot on whether users could complete each step correctly. After user testing, I found that even when users finished all the steps, some of them were still confused about how they completed the task. This made me realize that completing the task does not always mean the user has actually achieved their goal.\n\n**Question:** In the paper, the authors suggest observing users in their real environment. How can designers tell whether users are behaving naturally or changing their behavior because they know they are being observed?",
     media: []
   },
-  { date: "2026-09-21", week: 4, title: "Week 4", tags: [], body: "", media: [] },
+  {
+    date: "2026-09-21",
+    week: 4,
+    title: "Topic Reflection",
+    tags: ["reading", "reflection"],
+    body: "**Takeaway:** In the Why Tangibility Matters paper, one takeaway for me is that physical objects can help learners make a difficult task easier by letting them use their hands and the space around them. Instead of trying to remember everything in their head, learners can move, group, or compare objects to help them see the problem more clearly. This made me realize that the physical part of a learning tool should actually help the learner solve the task, not just make the activity feel more interactive.\n\n**Connection:** This reminds me of building LEGO when I was young. I usually did not plan the whole structure in my head before building. I would first put different pieces in front of me, compare their shapes and sizes, and try different combinations. Moving the pieces around helped me figure out what might work before I actually finished the build.\n\n**Question:** Should a tangible learning tool always be part of the learning process, or should it only be used as temporary support until learners can complete the task on their own?",
+    media: []
+  },
   { date: "2026-09-28", week: 5, title: "Week 5", tags: [], body: "", media: [] },
   { date: "2026-10-05", week: 6, title: "Week 6", tags: [], body: "", media: [] },
   { date: "2026-10-12", week: 7, title: "Week 7", tags: [], body: "", media: [] },
