@@ -59,7 +59,14 @@ window.entries = [
     body: "**Takeaway:** In the Why Tangibility Matters paper, one takeaway for me is that physical objects can help learners make a difficult task easier by letting them use their hands and the space around them. Instead of trying to remember everything in their head, learners can move, group, or compare objects to help them see the problem more clearly. This made me realize that the physical part of a learning tool should actually help the learner solve the task, not just make the activity feel more interactive.\n\n**Connection:** This reminds me of building LEGO when I was young. I usually did not plan the whole structure in my head before building. I would first put different pieces in front of me, compare their shapes and sizes, and try different combinations. Moving the pieces around helped me figure out what might work before I actually finished the build.\n\n**Question:** Should a tangible learning tool always be part of the learning process, or should it only be used as temporary support until learners can complete the task on their own?",
     media: []
   },
-  { date: "2026-09-28", title: "Week 5", tags: [], body: "", media: [] },
+  {
+    date: "2026-09-28",
+    week: 5,
+    title: "Topic Reflection",
+    tags: ["reading", "reflection"],
+    body: "**Takeaway:** In the paper Design Practices: \"Nothing about Us without Us,\" one idea that stood out to me is that including users does not always mean they have real power in the design process. Users may join interviews, workshops, or testing. But designers may still decide what the problem is, how the process works, and which ideas are finally used. The paper also points out that some participatory design can still be extractive. Community members may provide their experience and ideas, while the designers or institutions receive most of the credit and benefits. This made me think that participation should not only mean being invited into the process. It should also include real decision making power, accountability, and some control over the final outcome.\n\n**Connection:** This reminds me of some of my past UX projects. I usually brought users in during the testing stage, after the main problem and prototype were already decided. At that point, users could tell me what was confusing or difficult to use. But they did not really have a chance to question whether I was solving the right problem in the first place. After reading this paper, I realized that user testing can still be very limited if users only enter the process after most important decisions have already been made. That does not mean user testing is useless, but it shows that participation depends a lot on when users are included and what they are actually allowed to influence.\n\n**Question:** How much control should designers give up in a truly community led design process?",
+    media: []
+  },
   { date: "2026-10-05", title: "Week 6", tags: [], body: "", media: [] },
   { date: "2026-10-12", title: "Week 7", tags: [], body: "", media: [] },
   { date: "2026-10-19", title: "Week 8", tags: [], body: "", media: [] },
