@@ -75,7 +75,14 @@ window.entries = [
     body: "**Takeaway:** In \"Seven Principles to Design for Embodied Sensemaking,\" one idea that stood out to me is that physical interaction is not just a way to control digital information. The way people move, touch objects, and interact with the environment can also shape how they think and communicate. This made me think that when designing tangible tools, the physical interaction itself should be part of the learning or thinking process.\n\n**Connection:** This reminds me of brainstorming during UX design projects. I often write different ideas on sticky notes and move them around to group similar ideas or compare different directions. Sometimes I notice a new connection only after physically rearranging the notes. This connects to the paper's idea of scaffolds and traces, because the notes do not just record ideas. Their physical arrangement also helps shape the discussion and thinking process.\n\n**Burning Question:** Can digital technology sometimes reduce the value of physical interaction, even when it is added to support the experience?",
     media: []
   },
-  { date: "2026-10-12", title: "Week 7", tags: [], body: "", media: [] },
+  {
+    date: "2026-10-12",
+    week: 7,
+    title: "Topic Reflection",
+    tags: ["reading", "reflection"],
+    body: "**Takeaway:** In the paper A Brief Rant on the Future of Interaction Design, one idea that stood out to me is that technology should be designed around human capabilities. The author argues that our hands can do much more than slide on a flat screen. We can feel weight, texture, shape, and pressure. We can also grab, rotate, and move objects in many different ways. This made me think that future interaction should not only make current screens more advanced. It should also take advantage of what our bodies already do well.\n\n**Connection:** This connects to my recent tangible learning projects. When I work with buttons, physical objects, or other inputs, I notice that the interaction itself can give users feedback. In my past digital UX projects, I usually thought about screens, buttons, and menus first. This paper made me think more about whether some interactions could use physical objects or body movement instead of putting everything on a screen.\n\n**Burning Question:** If our hands and bodies are capable of so much, why do so many digital interfaces still reduce interaction to tapping and swiping?",
+    media: []
+  },
   { date: "2026-10-19", title: "Week 8", tags: [], body: "", media: [] },
   { date: "2026-10-26", title: "Week 9", tags: [], body: "", media: [] },
   { date: "2026-11-02", title: "Week 10", tags: [], body: "", media: [] },
