@@ -83,7 +83,14 @@ window.entries = [
     body: "**Takeaway:** In the paper A Brief Rant on the Future of Interaction Design, one idea that stood out to me is that technology should be designed around human capabilities. The author argues that our hands can do much more than slide on a flat screen. We can feel weight, texture, shape, and pressure. We can also grab, rotate, and move objects in many different ways. This made me think that future interaction should not only make current screens more advanced. It should also take advantage of what our bodies already do well.\n\n**Connection:** This connects to my recent tangible learning projects. When I work with buttons, physical objects, or other inputs, I notice that the interaction itself can give users feedback. In my past digital UX projects, I usually thought about screens, buttons, and menus first. This paper made me think more about whether some interactions could use physical objects or body movement instead of putting everything on a screen.\n\n**Burning Question:** If our hands and bodies are capable of so much, why do so many digital interfaces still reduce interaction to tapping and swiping?",
     media: []
   },
-  { date: "2026-10-19", title: "Week 8", tags: [], body: "", media: [] },
+  {
+    date: "2026-10-19",
+    week: 8,
+    title: "Topic Reflection",
+    tags: ["reading", "reflection"],
+    body: "**Takeaway:** In the paper Participatory Action Research and City Youth, one thing that stood out to me was that the students were not just answering researchers’ questions. They were actually doing the research themselves. They decided what problems to focus on, interviewed people in their schools, and used their own experiences to understand the results. I especially liked that they first talked to other students and then used those answers to create questions for teachers and administrators. It made the research feel more connected to what students were actually experiencing in school.\n\n**Connection:** This reminds me of user research in design. Usually, we decide the research questions first and then ask users to answer them. But sometimes users may notice problems that we never thought to ask about. I think letting participants help shape the questions could make the research more useful, especially when they have direct experience with the problem.\n\n**Question:** If participants help decide the research questions and also collect and interpret the data, how can researchers make sure the findings are still reliable?",
+    media: []
+  },
   { date: "2026-10-26", title: "Week 9", tags: [], body: "", media: [] },
   { date: "2026-11-02", title: "Week 10", tags: [], body: "", media: [] },
   { date: "2026-11-09", title: "Week 11", tags: [], body: "", media: [] },
