@@ -84,7 +84,7 @@ window.entries = [
     media: []
   },
   {
-    date: "2026-10-19",
+    date: "2026-10-27",
     week: 8,
     title: "Topic Reflection",
     tags: ["reading", "reflection"],
