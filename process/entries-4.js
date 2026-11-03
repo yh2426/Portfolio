@@ -99,7 +99,7 @@ window.entries = [
     body: "**Takeaway:** In the paper Mélange of Making: Bringing Children’s Informal Learning Cultures to the Classroom, one thing that stood out to me was the idea that children can learn through things that adults may see as just playing. The paper describes children as “hackers” because they keep testing, changing, and exploring the world around them. Things like making noise, playing with food, or trying different ways to use objects can help them understand how things work. This made me think that learning does not always need to be planned by adults. Sometimes children are already learning through their own curiosity and exploration.\n\n**Connection:** This connects to our recent project with children. At first, I was more focused on technology because that is what I am interested in. But when we talked with the children, they were more interested in food, animals, and trees. Some of them wanted to build a garden where they could grow fruit and keep pets. This made me realize that if we want children to explore and learn, we should start from what they are already interested in instead of pushing our own ideas first.\n\n**Burning Question:** How much freedom should children have in choosing what and how they learn, especially when schools still need to follow a curriculum?",
     media: []
   },
-  { date: "2026-11-02", title: "Week 10", tags: [], body: "", media: [] },
-  { date: "2026-11-09", title: "Week 11", tags: [], body: "", media: [] },
-  { date: "2026-11-23", title: "Week 12", tags: [], body: "", media: [] },
+  { date: "2026-11-10", title: "Week 10", tags: [], body: "", media: [] },
+  { date: "2026-11-17", title: "Week 11", tags: [], body: "", media: [] },
+  { date: "2026-12-01", title: "Week 12", tags: [], body: "", media: [] },
 ];
